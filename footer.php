@@ -29,7 +29,7 @@
 	</footer>
 	<div id="bottombar">
 		<div class="wrapper">
-			<p id="copyright">&copy; Copyright 2013 <?php bloginfo( 'name' ); ?></p>
+			<p id="copyright">&copy; Copyright <?php echo date(Y); ?> <?php bloginfo( 'name' ); ?></p>
 			<div id="bottomlinks">
 				<a href="#">Terms & Conditions</a>|<a href="#">Privacy Policy</a>
 			</div>
