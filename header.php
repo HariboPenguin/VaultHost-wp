@@ -5,110 +5,86 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package WordPress
- * @subpackage Bare 
- * @since Bare 1.0 
+ * @subpackage VaultHost 
+ * @since VaultHost 1.0 
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE HTML>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title><?php wp_title( '|', true, 'right' );  bloginfo( 'name' ); echo " | "; echo get_bloginfo( 'description', 'display' );?></title>
 
-	wp_title( '|', true, 'right' );
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<!-- css -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="slider-themes/bar/bar.css">
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<!-- end css -->
 
-	// Add the blog name.
-	bloginfo( 'name' );
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+	<script type="text/javascript">
+$(window).load(function() {
+    $('#slider').nivoSlider();
+});
+</script>
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'bare' ), max( $paged, $page ) );
+<?php wp_head(); ?>
 
-	?></title>
-<!--
-<link rel="profile" href="uri for xhtml profile" />
--->
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-
-	/* Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-?>
 </head>
+<body>
 
-<body <?php body_class(); ?>>
-<!--
-<div id="wrapper" class="hfeed">
-	<div id="header">
-		<div id="masthead">
-			<div id="branding" role="banner">
-					<span>
-					</span>
-			</div>
--->
-<!-- #branding 
+	<div id="topbar">
+		<div class="wrapper">
+			<p id="currentoffer"><span>CURRENT PROMO:</span> 25% OFF ALL PACKAGES!</p>
+			<?php wp_nav_menu( array(
+				'theme_location'  => 'topbar-menu',
+				'menu'            => '', 
+				'container'       => 'div', 
+				'container_class' => 'menu-{menu slug}-container', 
+				'container_id'    => 'toplinks',
+				'menu_class'      => 'menu', 
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => '' ) );?>
 		</div>
--->
-<!-- #masthead 
 	</div>
--->
-<!-- #header 
--->
-<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-	<<?php echo $heading_tag; ?> id="site-title">
-	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-	</<?php echo $heading_tag; ?>>
-	<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-
-				<?php
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-/**
-					if ( is_singular() &&
-							has_post_thumbnail( $post->ID ) &&
-							( 
-/* $src, $width, $height // 
-$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-					else : 
-
-?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-					<?php endif; 
-*/
-
-?>
-
-			<div id="access" role="navigation">
-			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-<?php wp_nav_menu(  array( 'theme_location' => 'header-menu' ));  ?>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'bare' ); ?>"><?php _e( 'Skip to content', 'bare' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-				<?php 
-/*
-wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); 
-*/
-
-?>
-			</div><!-- #access -->
-
-	<div id="main">
+	<div style="clear:both"></div>
+	<header>
+		<div class="wrapper">
+			<h1><?php bloginfo( 'name' ); ?></h1>
+			<?php wp_nav_menu( array(
+				'theme_location'  => 'main-menu',
+				'menu'            => '', 
+				'container'       => 'nav', 
+				'container_class' => 'menu-{menu slug}-container', 
+				'container_id'    => '',
+				'menu_class'      => 'menu', 
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => '' ) ) ?>
+		</div>
+	</header>

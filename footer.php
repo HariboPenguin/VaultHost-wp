@@ -6,47 +6,38 @@
  * after.  
  *
  * @package WordPress
- * @subpackage Bare 
- * @since Bare 1.0
+ * @subpackage VaultHost 
+ * @since VaultHost 1.0
  */
 ?>
-	</div><!-- #main -->
 
-	<div id="footer" role="contentinfo">
-		<div id="colophon">
+<footer>
+		<div class="wrapper">
+			<div id="footerboxabout" class="footerbox">
+				<h6>About Us</h6>
+			</div>
+			<div id="footerboxnews" class="footerbox">
+				<h6>Latest News</h6>
+			</div>
+			<div id="footerboxtwitter" class="footerbox">
+				<h6>Twitter Feed</h6>
+			</div>
+			<div id="footerboxcontactinfo" class="footerbox">
+				<h6>Contact Info</h6>
+			</div>
+		</div>
+	</footer>
+	<div id="bottombar">
+		<div class="wrapper">
+			<p id="copyright">&copy; Copyright 2013 <?php bloginfo( 'name' ); ?></p>
+			<div id="bottomlinks">
+				<a href="#">Terms & Conditions</a>|<a href="#">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
 
-<?php
-	/* A sidebar in the footer? Yep. You can can customize
-	 * your footer with four columns of widgets.
-	 */
-	get_sidebar( 'footer' );
-?>
 
-			<div id="site-info">
-				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-			</div><!-- #site-info -->
+<?php wp_footer(); ?>
 
-			<div id="site-generator">
-				<a href="<?php echo esc_url( __('http://wordpress.org/', 'bare') ); ?>"
-						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'bare'); ?>" rel="generator">
-					<?php printf( __('Proudly powered by %s.', 'bare'), 'WordPress' ); ?>
-				</a>
-			</div><!-- #site-generator -->
-
-		</div><!-- #colophon -->
-	</div><!-- #footer -->
-
-<!-- </div>#wrapper -->
-
-<?php
-	/* Always have wp_footer() just before the closing </body>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to reference JavaScript files.
-	 */
-
-	wp_footer();
-?>
 </body>
 </html>
