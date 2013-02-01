@@ -55,7 +55,7 @@ $(window).load(function() {
 				'menu_class'      => 'menu', 
 				'menu_id'         => '',
 				'echo'            => true,
-				'fallback_cb'     => 'wp_page_menu',
+				'fallback_cb'     => false,
 				'before'          => '',
 				'after'           => '',
 				'link_before'     => '',
