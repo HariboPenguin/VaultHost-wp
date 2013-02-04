@@ -35,4 +35,40 @@ function change_footer_content() {
 
 add_filter('admin_footer_text','change_footer_content');
 
+/* ------------------------------------------------------------------------ * 
+ * Theme Options Page
+ * ------------------------------------------------------------------------ */ 
+
+function vaulthost_theme_menu() {
+
+	add_theme_page( 'VaultHost Options', 'VaultHost Options', 'administrator', 'vaulthost_theme_options', 'vaulthost_theme_options_display' );
+
+}
+
+add_action('admin_menu', 'vaulthost_theme_menu');
+
+
+function vaulthost_theme_options_display() {
+
+	$html = '<div class="wrap">';
+		$html .= '<h2>VaultHost Theme Options</h2>';
+		$html .= '<p class="description">Testing</p>';
+	$html .= '</div>';
+
+	echo $html;
+
+}
+
+/* ------------------------------------------------------------------------ * 
+ * Setting Registration
+ * ------------------------------------------------------------------------ */ 
+
+function vaulthost_initialize_theme_options() {
+
+	add_settings_section( 'general_settings_section', 'VaultHost Options', 'vaulthost_general_options_callback', 'general' );
+
+}
+
+add_action('admin_init', 'vaulthost_initialize_theme_options');
+
 ?>
