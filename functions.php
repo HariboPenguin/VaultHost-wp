@@ -44,6 +44,11 @@ add_action('admin_init', 'theme_options_init');
 add_action('admin_menu', 'theme_options_add_page');
 
 function theme_options_init() {
+
+	if ( false == get_option( 'vaulthost_social_options' )) {
+		add_option('vaulthost_social_options');
+	}
+
 	register_setting( 'vaulthost_social_options', 'vaulthost_social_fb_option');
 	register_setting( 'vaulthost_social_options', 'vaulthost_social_twitter_option');
 	register_setting( 'vaulthost_social_options', 'vaulthost_social_googleplus_option');
@@ -74,10 +79,22 @@ function render_theme_options_page() {
 		<?php screen_icon(); ?>
 		<h2>VaultHost Theme Options</h2>
 
+	</div>
+
+	<div class="options">
+		<h3>Social Options</h3>
+
 		<form method="post" action="options.php">
 
 			<?php settings_fields( 'vaulthost_social_options' ); ?>
 			<?php do_settings_sections( 'vaulthost_social_options' ); ?>
+
+			<label for="fb_option">Facebook:</label>
+			<input type="text" id="fb_option" name="vaulthost_social_fb_option" value="<?php echo get_option( 'vaulthost_social_fb_option' ); ?>" /> </br>
+			<label for="twitter_option">Twitter:</label>
+			<input type="text" id="fb_option" name="vaulthost_social_twitter_option" value="<?php echo get_option( 'vaulthost_social_twitter_option' ); ?>" /> </br>
+			<label for="googleplus_option">Google+:</label>
+			<input type="text" id="fb_option" name="vaulthost_social_googleplus_option" value="<?php echo get_option( 'vaulthost_social_googleplus_option' ); ?>" /> </br>
 
 			<?php submit_button(); ?>
 
