@@ -21,7 +21,7 @@ function login_stylesheet() {
 add_action('login_head', 'login_stylesheet');
 
 function login_logo_url($url) {
-	return 'http://vaulthost.d-tomlinson.co.uk';
+	return get_site_url();
 }
 add_filter('login_headerurl','login_logo_url');
 
@@ -67,6 +67,7 @@ function vaulthost_theme_options_display() {
 function vaulthost_initialize_theme_options() {
 
 	add_settings_section( 'general_settings_section', 'VaultHost Options', 'vaulthost_general_options_callback', 'general' );
+
 
 }
 
