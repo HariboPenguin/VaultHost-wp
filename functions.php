@@ -39,13 +39,31 @@ add_filter('admin_footer_text','change_footer_content');
  * Theme Options Page
  * ------------------------------------------------------------------------ */ 
 
-function vaulthost_theme_menu() {
 
-	add_theme_page( 'VaultHost Options', 'VaultHost Options', 'administrator', 'vaulthost_theme_options', 'vaulthost_theme_options_display' );
+add_action('admin_init', 'theme_options_init');
+add_action('admin_menu', 'theme_options_add_page');
 
+function theme_options_init() {
+	register_setting( 'vaulthost_options', 'vaulthost_theme_options');
 }
 
-add_action('admin_menu', 'vaulthost_theme_menu');
+function theme_options_add_page() {
+	add_theme_page( __('Theme Options', 'vaulthosttheme'), __('Theme Options', 'vaulthosttheme'), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+}
+
+function theme_options_do_page() {
+	global $select_options;
+
+	if (! isset($_REQUEST['settings-updated']))
+		$_REQUEST['settings-updated'] = false;
+		$html = '<div class="wrap">';
+			$html .= screen_icon();
+			$html .= "<h2>". __('VaultHost Theme Options', 'vaulthosttheme') . "</h2>";
+		$html .= '</div>';
+
+	echo $html;
+
+}
 
 
 function vaulthost_theme_options_display() {
@@ -59,17 +77,8 @@ function vaulthost_theme_options_display() {
 
 }
 
-/* ------------------------------------------------------------------------ * 
- * Setting Registration
- * ------------------------------------------------------------------------ */ 
-
-function vaulthost_initialize_theme_options() {
-
-	add_settings_section( 'general_settings_section', 'VaultHost Options', 'vaulthost_general_options_callback', 'general' );
 
 
-}
 
-add_action('admin_init', 'vaulthost_initialize_theme_options');
 
 ?>
