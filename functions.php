@@ -51,6 +51,7 @@ add_action('admin_menu', 'vaulthost_theme_menu');
 function vaulthost_theme_options_display() {
 
 	$html = '<div class="wrap">';
+		$html .= screen_icon();
 		$html .= '<h2>VaultHost Theme Options</h2>';
 		$html .= '<p class="description">Customize aspects of the VaultHost theme template.</p>';
 	$html .= '</div>';
