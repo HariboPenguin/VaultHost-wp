@@ -44,14 +44,16 @@ add_action('admin_init', 'theme_options_init');
 add_action('admin_menu', 'theme_options_add_page');
 
 function theme_options_init() {
-	register_setting( 'vaulthost_options', 'vaulthost_theme_options');
+	register_setting( 'vaulthost_social_options', 'vaulthost_social_fb_option');
+	register_setting( 'vaulthost_social_options', 'vaulthost_social_twitter_option');
+	register_setting( 'vaulthost_social_options', 'vaulthost_social_googleplus_option');
 }
 
 function theme_options_add_page() {
-	add_theme_page( __('Theme Options', 'vaulthosttheme'), __('Theme Options', 'vaulthosttheme'), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+	add_theme_page( __('Theme Options', 'vaulthosttheme'), __('Theme Options', 'vaulthosttheme'), 'edit_theme_options', 'theme_options', 'render_theme_options_page' );
 }
 
-function theme_options_do_page() {
+function old_theme_options_page() {
 	global $select_options;
 
 	if (! isset($_REQUEST['settings-updated']))
@@ -65,20 +67,24 @@ function theme_options_do_page() {
 
 }
 
+function render_theme_options_page() {
+?>
 
-function vaulthost_theme_options_display() {
+	<div class="wrap">
+		<?php screen_icon(); ?>
+		<h2>VaultHost Theme Options</h2>
 
-	$html = '<div class="wrap">';
-		$html .= screen_icon();
-		$html .= '<h2>VaultHost Theme Options</h2>';
-	$html .= '</div>';
+		<form method="post" action="options.php">
 
-	echo $html;
+			<?php settings_fields( 'vaulthost_social_options' ); ?>
+			<?php do_settings_sections( 'vaulthost_social_options' ); ?>
 
-}
+			<?php submit_button(); ?>
 
+		</form>
 
+	</div>
 
-
+<?php }
 
 ?>
