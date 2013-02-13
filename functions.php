@@ -75,6 +75,8 @@ function old_theme_options_page() {
 function render_theme_options_page() {
 ?>
 
+	<?php $options = get_option('vaulthost_social_options') ?>
+
 	<div class="wrap">
 		<?php screen_icon(); ?>
 		<h2>VaultHost Theme Options</h2>
