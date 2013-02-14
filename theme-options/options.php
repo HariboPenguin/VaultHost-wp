@@ -118,9 +118,17 @@ function vaulthost_options_page_display() {
 		</h2>	
 
 		<form method="post" action="options.php">
-			<?php settings_fields( 'vaulthost_theme_social_options' ); ?>
-			<?php do_settings_sections( 'vaulthost_theme_social_options' ); ?>
-			<?php submit_button(); ?>
+
+			<?php 
+				if ($active_tab == 'general_options') {
+					echo '<p>General Options Here</p>';
+
+				} else if ($active_tab == 'social_options') {
+					settings_fields( 'vaulthost_theme_social_options' );
+					do_settings_sections( 'vaulthost_theme_social_options' );
+					submit_button();
+				}
+			?>
 		</form>
 
 	</div>
