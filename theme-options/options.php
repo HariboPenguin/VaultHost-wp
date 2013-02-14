@@ -114,7 +114,7 @@ function vaulthost_options_page_display() {
 
 		<h2 class="nav-tab-wrapper">
 			<a href="?page=vaulthost_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>">General Options</a>
-			<a href="?page=vaulthost_options&tab=social_options" class="nav-tab  <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>">Social Options</a>
+			<a href="?page=vaulthost_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>">Social Options</a>
 		</h2>	
 
 		<form method="post" action="options.php">
