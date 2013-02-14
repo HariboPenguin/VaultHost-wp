@@ -106,6 +106,17 @@ function vaulthost_options_page_display() {
 
 		<?php settings_errors(); ?>
 
+		<?php 
+		$active_tab = isset( $_GET['tab']) ? $_GET['tab'] : 'general_options';
+
+
+		?>
+
+		<h2 class="nav-tab-wrapper">
+			<a href="?page=vaulthost_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>">General Options</a>
+			<a href="?page=vaulthost_options&tab=social_options" class="nav-tab  <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>">Social Options</a>
+		</h2>	
+
 		<form method="post" action="options.php">
 			<?php settings_fields( 'vaulthost_theme_social_options' ); ?>
 			<?php do_settings_sections( 'vaulthost_theme_social_options' ); ?>
