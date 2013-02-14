@@ -22,6 +22,7 @@ function vaulthost_init_social_options() {
 	add_settings_field( 'facebook', 'Facebook:', 'vaulthost_facebook_callback', 'vaulthost_theme_social_options', 'social_settings_section');
 	add_settings_field( 'twitter', 'Twitter Username:', 'vaulthost_twitter_callback', 'vaulthost_theme_social_options', 'social_settings_section');
 	add_settings_field( 'googleplus', 'Google+:', 'vaulthost_googleplus_callback', 'vaulthost_theme_social_options', 'social_settings_section');
+	add_settings_field( 'youtube', 'YouTube:', 'vaulthost_youtube_callback', 'vaulthost_theme_social_options', 'social_settings_section');
 	register_setting( 'vaulthost_theme_social_options', 'vaulthost_theme_social_options' );
 
 }
@@ -69,6 +70,19 @@ function vaulthost_googleplus_callback() {
 	}
 
 	echo '<input type="text" id="googleplus" name="vaulthost_theme_social_options[googleplus]" value="' . $options['googleplus'] . '">';
+
+}
+
+function vaulthost_youtube_callback() {
+
+	$options = get_option('vaulthost_theme_social_options');
+
+	$url = '';
+	if (isset($options['youtube'])) {
+		$url = $options['youtube'];
+	}
+
+	echo '<input type="text" id="youtube" name="vaulthost_theme_social_options[youtube]" value="' . $options['youtube'] . '">';
 
 }
 
