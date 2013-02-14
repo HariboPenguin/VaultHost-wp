@@ -39,3 +39,8 @@ add_filter('admin_footer_text','change_footer_content');
  * Theme Options Page
  * ------------------------------------------------------------------------ */ 
 include 'theme-options/options.php';
+
+/* ------------------------------------------------------------------------ * 
+ * Packages Page
+ * ------------------------------------------------------------------------ */ 
+include 'custom-post-types/packages.php';
