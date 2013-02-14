@@ -29,7 +29,7 @@ function vaulthost_init_social_options() {
 add_action('admin_init', 'vaulthost_init_social_options');
 
 function vaulthost_social_options_callback() {
-	echo '<p>Social Options Here</p>';
+	echo '<p>Enter social network usernames below:</p>';
 }
 
 function vaulthost_facebook_callback() {
