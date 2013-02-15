@@ -3,8 +3,8 @@
  * The Template for displaying all single posts.
  *
  * @package WordPress
- * @subpackage Bare 
- * @since Bare 1.0
+ * @subpackage VaultHost 
+ * @since VaultHost 1.0
  */
 
 get_header(); ?>
@@ -23,9 +23,6 @@ get_header(); ?>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 
 					<div class="entry-meta">
-						<?php 
-							bare_posted_on(); 
-						?>
 					</div><!-- .entry-meta -->
 
 					<div class="entry-content">
@@ -51,9 +48,6 @@ get_header(); ?>
 <?php endif; ?>
 
 					<div class="entry-utility">
-						<?php 
-							bare_posted_in(); 
-						?>
 						<?php edit_post_link( __( 'Edit', 'bare' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
