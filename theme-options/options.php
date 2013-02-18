@@ -90,10 +90,14 @@ function vaulthost_youtube_callback() {
 
 }
 
+/* ------------------------------------------------------------------------ * 
+ * Twitter Feed Options
+ * ------------------------------------------------------------------------ */   
+
 
 function vaulthost_twitter_feed_options_callback() {
 
-	echo '<p>Twitter feed options below:</p>';
+	echo '<p>Configure Twitter feed options below:</p>';
 
 }
 
