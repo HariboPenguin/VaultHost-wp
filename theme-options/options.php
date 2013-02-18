@@ -163,7 +163,6 @@ function vaulthost_options_page_display() {
 
 			<?php 
 				if ($active_tab == 'general_options') {
-					echo '<p>General Options Here</p>';
 					settings_fields( 'vaulthost_theme_general_options' );
 					do_settings_sections( 'vaulthost_theme_general_options' );
 					submit_button();
