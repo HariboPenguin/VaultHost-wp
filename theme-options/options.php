@@ -20,6 +20,8 @@ function vaulthost_init_social_options() {
 	add_settings_field( 'twitter', 'Twitter Username:', 'vaulthost_twitter_callback', 'vaulthost_theme_social_options', 'social_settings_section');
 	add_settings_field( 'googleplus', 'Google+:', 'vaulthost_googleplus_callback', 'vaulthost_theme_social_options', 'social_settings_section');
 	add_settings_field( 'youtube', 'YouTube:', 'vaulthost_youtube_callback', 'vaulthost_theme_social_options', 'social_settings_section');
+	add_settings_section( 'twitter_feed_settings_section', 'Twitter Feed Options', 'vaulthost_twitter_feed_options_callback', 'vaulthost_theme_social_options' );
+	add_settings_field( 'tweets_to_display', 'Number of tweets to display:', 'vaulthost_tweets_to_display_callback', 'vaulthost_theme_social_options', 'twitter_feed_settings_section');
 	register_setting( 'vaulthost_theme_social_options', 'vaulthost_theme_social_options' );
 
 }
@@ -85,6 +87,26 @@ function vaulthost_youtube_callback() {
 	}
 
 	echo '<input type="text" id="youtube" name="vaulthost_theme_social_options[youtube]" value="' . $options['youtube'] . '">';
+
+}
+
+
+function vaulthost_twitter_feed_options_callback() {
+
+	echo '<p>Twitter feed options below:</p>';
+
+}
+
+function vaulthost_tweets_to_display_callback() {
+
+	$options = get_option('vaulthost_theme_social_options');
+
+	$amount = '3';
+	if (isset($options['tweets_to_display'])) {
+		$amount = $options['tweets_to_display'];
+	}
+
+	echo '<input type="number" id="tweets_to_display" name="vaulthost_theme_social_options[tweets_to_display]" value="' . $options['tweets_to_display'] . '">';
 
 }
 
