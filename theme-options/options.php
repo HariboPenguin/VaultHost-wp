@@ -5,12 +5,9 @@ function vaulthost_init_theme_options_page() {
 }
 add_action('admin_menu', 'vaulthost_init_theme_options_page');
 
-// add_action('admin_init', 'vaulthost_init_theme_options');
-
-// function vaulthost_init_theme_options() {
-// 	add_settings_section( 'general_settings_section', 'General Options', 'vaulthost_general_options_callback', 'vaulthost_options' );
-// 	add_settings_field( 'show_header', 'Header', 'vaulthost_toggle_header_callback', $page, $section = 'default', $args = array )
-// }
+/* ------------------------------------------------------------------------ * 
+ * Social Options
+ * ------------------------------------------------------------------------ */   
 
 function vaulthost_init_social_options() {
 
@@ -28,6 +25,11 @@ function vaulthost_init_social_options() {
 }
 
 add_action('admin_init', 'vaulthost_init_social_options');
+
+
+/* ------------------------------------------------------------------------ * 
+ * Social Options Callbacks
+ * ------------------------------------------------------------------------ */   
 
 function vaulthost_social_options_callback() {
 	echo '<p>Enter social network usernames below:</p>';
@@ -90,12 +92,51 @@ function vaulthost_youtube_callback() {
 
 
 
+/* ------------------------------------------------------------------------ * 
+ * General Options
+ * ------------------------------------------------------------------------ */   
 
+function vaulthost_init_general_options() {
+	if (false == get_option('vaulthost_theme_general_options')) {
+		add_option('vaulthost_theme_general_options');
+	}
+
+	add_settings_section( 'general_options_section', 'General Options', 'vaulthost_general_options_callback', 'vaulthost_theme_general_options' );
+	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'general_options_section');
+	add_settings_field( 'description', 'Description:', 'vaulthost_description_callback', 'vaulthost_theme_general_options', 'general_options_section');
+	register_setting( 'vaulthost_theme_general_options', 'vaulthost_theme_general_options' );
+
+}
+add_action('admin_init', 'vaulthost_init_general_options');
 
 function vaulthost_general_options_callback() {
 	echo '<p>General Options Thing</p>';
 }
 
+function vaulthost_logo_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	echo '<p>Logo Upload Goes Here!</p>';
+
+}
+
+function vaulthost_description_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$description = '';
+	if (isset($options['description'])) {
+		$description = $options['description'];
+	}
+
+	echo '<input type="text" id="description" name="vaulthost_theme_general_options[description]" value="' . $options['description'] . '">';
+}
+
+
+/* ------------------------------------------------------------------------ * 
+ * Page Rendering
+ * ------------------------------------------------------------------------ */   
 
 function vaulthost_options_page_display() {
 ?>
@@ -115,6 +156,7 @@ function vaulthost_options_page_display() {
 		<h2 class="nav-tab-wrapper">
 			<a href="?page=vaulthost_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>">General Options</a>
 			<a href="?page=vaulthost_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>">Social Options</a>
+			<a href="?page=vaulthost_options&tab=contact_options" class="nav-tab <?php echo $active_tab == 'contact_options' ? 'nav-tab-active' : ''; ?>">Contact Options</a>
 		</h2>	
 
 		<form method="post" action="options.php">
@@ -122,6 +164,9 @@ function vaulthost_options_page_display() {
 			<?php 
 				if ($active_tab == 'general_options') {
 					echo '<p>General Options Here</p>';
+					settings_fields( 'vaulthost_theme_general_options' );
+					do_settings_sections( 'vaulthost_theme_general_options' );
+					submit_button();
 
 				} else if ($active_tab == 'social_options') {
 					settings_fields( 'vaulthost_theme_social_options' );
