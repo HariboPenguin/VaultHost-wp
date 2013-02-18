@@ -20,9 +20,20 @@
 			</div>
 			<div id="footerboxnews" class="footerbox">
 				<h6>Latest News</h6>
+				<ul>
+					<?php $the_query = new WP_Query('showposts=3'); ?>
+					<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+					<li><a href="<?php the_permalink(); ?>" title=""><?php the_title(); ?></a></li>
+					<li><?php the_excerpt(__('(more...)'));?></li>
+					<?php endwhile; ?>
+				</ul>
 			</div>
 			<div id="footerboxtwitter" class="footerbox">
 				<h6>Twitter Feed</h6>
+				<?php $social_options = get_option('vaulthost_theme_social_options'); ?>
+				<div id="twitter_update_list"></div>
+				<?php echo $social_options['twitter'] ? '<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>' : ''; ?>
+				<?php echo $social_options['twitter'] ? '<script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline/' . $social_options['twitter'] . '.json?callback=twitterCallback2&count=' . $social_options['tweets_to_display'] . '"></script>' : ''; ?>
 			</div>
 			<div id="footerboxcontactinfo" class="footerbox">
 				<h6>Contact Info</h6>
