@@ -161,6 +161,84 @@ function vaulthost_description_callback() {
 
 
 /* ------------------------------------------------------------------------ * 
+ * Contact Options
+ * ------------------------------------------------------------------------ */   
+
+function vaulthost_init_contact_options() {
+
+	if (false == get_option('vaulthost_theme_contact_options')) {
+		add_option('vaulthost_theme_contact_options');
+	}
+
+	add_settings_section( 'contact_options_section', 'Contact Options', 'vaulthost_contact_options_callback', 'vaulthost_theme_contact_options' );
+	add_settings_field( 'address', 'Address:', 'vaulthost_address_callback', 'vaulthost_theme_contact_options', 'contact_options_section');
+	add_settings_field( 'phone', 'Phone:', 'vaulthost_phone_callback', 'vaulthost_theme_contact_options', 'contact_options_section');
+	add_settings_field( 'mobile', 'Mobile:', 'vaulthost_mobile_callback', 'vaulthost_theme_contact_options', 'contact_options_section');
+	add_settings_field( 'email', 'E-Mail:', 'vaulthost_email_callback', 'vaulthost_theme_contact_options', 'contact_options_section');
+	register_setting( 'vaulthost_theme_contact_options', 'vaulthost_theme_contact_options');
+
+
+}
+add_action('admin_init', 'vaulthost_init_contact_options');
+
+function vaulthost_contact_options_callback() {
+	echo '<p>Enter contact details here:</p>';
+}
+
+function vaulthost_address_callback() {
+
+	$options = get_option('vaulthost_theme_contact_options');
+
+	$address = '';
+	if (isset($options['address'])) {
+		$address = $options['address'];
+	}
+
+	echo '<input type="text" id="address" name="vaulthost_theme_contact_options[address]" value="' . $options['address'] . '">';
+
+}
+
+function vaulthost_phone_callback() {
+
+	$options = get_option('vaulthost_theme_contact_options');
+
+	$phone = '';
+	if (isset($options['phone'])) {
+		$phone = $options['phone'];
+	}
+
+	echo '<input type="text" id="phone" name="vaulthost_theme_contact_options[phone]" value="' . $options['phone'] . '">';
+
+}
+
+function vaulthost_mobile_callback() {
+
+	$options = get_option('vaulthost_theme_contact_options');
+
+	$mobile = '';
+	if (isset($options['mobile'])) {
+		$mobile = $options['mobile'];
+	}
+
+	echo '<input type="text" id="mobile" name="vaulthost_theme_contact_options[mobile]" value="' . $options['mobile'] . '">';
+
+}
+
+function vaulthost_email_callback() {
+
+	$options = get_option('vaulthost_theme_contact_options');
+
+	$email = '';
+	if (isset($options['email'])) {
+		$email = $options['email'];
+	}
+
+	echo '<input type="text" id="email" name="vaulthost_theme_contact_options[email]" value="' . $options['email'] . '">';
+
+}
+
+
+/* ------------------------------------------------------------------------ * 
  * Page Rendering
  * ------------------------------------------------------------------------ */   
 
@@ -192,10 +270,13 @@ function vaulthost_options_page_display() {
 					settings_fields( 'vaulthost_theme_general_options' );
 					do_settings_sections( 'vaulthost_theme_general_options' );
 					submit_button();
-
 				} else if ($active_tab == 'social_options') {
 					settings_fields( 'vaulthost_theme_social_options' );
 					do_settings_sections( 'vaulthost_theme_social_options' );
+					submit_button();
+				} else if ($active_tab == 'contact_options') {
+					settings_fields( 'vaulthost_theme_contact_options' );
+					do_settings_sections( 'vaulthost_theme_contact_options' );
 					submit_button();
 				}
 			?>

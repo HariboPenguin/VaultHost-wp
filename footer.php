@@ -37,6 +37,11 @@
 			</div>
 			<div id="footerboxcontactinfo" class="footerbox">
 				<h6>Contact Info</h6>
+				<?php $contact_options = get_option('vaulthost_theme_contact_options'); ?>
+				<?php echo $contact_options['address'] ? '<p id="address">' . $contact_options['address'] . '</p>' : ''; ?>
+				<?php echo $contact_options['phone'] ? '<p id="phone">' . $contact_options['phone'] . '</p>' : ''; ?>
+				<?php echo $contact_options['mobile'] ? '<p id="mobile">' . $contact_options['mobile'] . '</p>' : ''; ?>
+				<?php echo $contact_options['email'] ? '<p id="email">' . $contact_options['email'] . '</p>' : ''; ?>
 			</div>
 		</div>
 	</footer>
