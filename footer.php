@@ -42,6 +42,11 @@
 				<?php echo $contact_options['phone'] ? '<p id="phone">' . $contact_options['phone'] . '</p>' : ''; ?>
 				<?php echo $contact_options['mobile'] ? '<p id="mobile">' . $contact_options['mobile'] . '</p>' : ''; ?>
 				<?php echo $contact_options['email'] ? '<p id="email">' . $contact_options['email'] . '</p>' : ''; ?>
+				<?php $social_options = get_option('vaulthost_theme_social_options'); ?>
+				<?php echo $social_options['facebook'] ? '<a href="https://www.facebook.com/' . $social_options['facebook'] . '">Facebook</a>' : ''; ?>
+				<?php echo $social_options['twitter'] ? '<a href="https://twitter.com/' . $social_options['twitter'] . '">Twitter</a>' : ''; ?>
+				<?php echo $social_options['googleplus'] ? '<a href="https://plus.google.com/' . $social_options['googleplus'] . '">Google+</a>' : ''; ?>
+				<?php echo $social_options['youtube'] ? '<a href="https://www.youtube.com/' . $social_options['youtube'] . '">YouTube</a>' : ''; ?>
 			</div>
 		</div>
 	</footer>

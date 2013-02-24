@@ -88,11 +88,3 @@ $(window).load(function() {
 				'walker'          => '' ) ) ?>
 		</div>
 	</header>
-	<div id="social">
-		<?php $social_options = get_option('vaulthost_theme_social_options'); ?>
-		<?php echo $social_options['facebook'] ? '<a href="https://www.facebook.com/' . $social_options['facebook'] . '">Facebook</a>' : ''; ?>
-		<?php echo $social_options['twitter'] ? '<a href="https://twitter.com/' . $social_options['twitter'] . '">Twitter</a>' : ''; ?>
-		<?php echo $social_options['googleplus'] ? '<a href="https://plus.google.com/' . $social_options['googleplus'] . '">Google+</a>' : ''; ?>
-		<?php echo $social_options['youtube'] ? '<a href="https://www.youtube.com/' . $social_options['youtube'] . '">YouTube</a>' : ''; ?>
-
-	</div>
