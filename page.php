@@ -15,7 +15,7 @@
 get_header(); ?>
 
 		<div id="container">
-			<div id="content" role="main">
+			<div id="content" class="wrapper" role="main">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
