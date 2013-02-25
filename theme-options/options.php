@@ -128,8 +128,9 @@ function vaulthost_init_general_options() {
 	}
 
 	add_settings_section( 'general_options_section', 'General Options', 'vaulthost_general_options_callback', 'vaulthost_theme_general_options' );
-	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'general_options_section');
 	add_settings_field( 'description', 'Description:', 'vaulthost_description_callback', 'vaulthost_theme_general_options', 'general_options_section');
+	add_settings_section( 'logo_options', 'Logo Options', 'vaulthost_logo_options_callback', 'vaulthost_theme_general_options' );
+	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
 	register_setting( 'vaulthost_theme_general_options', 'vaulthost_theme_general_options' );
 
 }
@@ -137,14 +138,6 @@ add_action('admin_init', 'vaulthost_init_general_options');
 
 function vaulthost_general_options_callback() {
 	echo '<p>General Options Thing</p>';
-}
-
-function vaulthost_logo_callback() {
-
-	$options = get_option('vaulthost_theme_general_options');
-
-	echo '<p>Logo Upload Goes Here!</p>';
-
 }
 
 function vaulthost_description_callback() {
@@ -157,6 +150,18 @@ function vaulthost_description_callback() {
 	}
 
 	echo '<input type="text" id="description" name="vaulthost_theme_general_options[description]" value="' . $options['description'] . '">';
+}
+
+function vaulthost_logo_options_callback() {
+	echo '<p>Set the website logo here:</p>';
+}
+
+function vaulthost_logo_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	echo '<p>Logo Upload Goes Here!</p>';
+
 }
 
 
