@@ -158,10 +158,13 @@ function vaulthost_logo_options_callback() {
 
 function vaulthost_logo_callback() {
 
-	$options = get_option('vaulthost_theme_general_options');
+	$options = get_option('vaulthost_theme_general_options');?>
 
-	echo '<p>Logo Upload Goes Here!</p>';
+	<input type="text" id="logourl" name="vaulthost_theme_general_options[logourl]" value="<?php echo esc_url($options['logourl']); ?>" />
+	<input id="upload_logo_button" type="button" class="button" value="<?php _e('Upload Logo', 'vaulthost'); ?>" />
+	<span class="description"><?php _e('Upload an image for the website logo.', 'vaulthost'); ?></span>
 
+	<?php
 }
 
 
