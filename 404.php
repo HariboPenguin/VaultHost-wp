@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="container">
+	<div class="wrapper">
 		<div id="content" role="main">
 
 			<div id="post-0" class="post error404 not-found">
