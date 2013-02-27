@@ -69,7 +69,7 @@
 	 */
 	if ( ! comments_open() ) :
 ?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'bare' ); ?></p>
+	<!-- <p class="nocomments"><?php _e( 'Comments are closed.', 'bare' ); ?></p> -->
 <?php endif; // end ! comments_open() ?>
 
 <?php endif; // end have_comments() ?>
