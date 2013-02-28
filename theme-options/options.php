@@ -167,6 +167,21 @@ function vaulthost_logo_callback() {
 	<?php
 }
 
+function vaulthost_logo_options_enqueue_scripts() {
+	wp_register_script( 'vaulthost-upload', get_template_directory_uri() . '/theme-options/js/vaulthost-upload.js', array('jquery','media-upload','thickbox'));
+
+	if ( 'toplevel_page_vaulthost_options' == get_current_screen() -> id ) {
+		wp_enqueue_script('jquery');
+
+		wp_enqueue_script('thickbox');
+		wp_enqueue_style('thickbox');
+
+		wp_enqueue_script('media-upload');
+		wp_enqueue_script('vaulthost-upload');
+	}
+}
+add_action('admin_enqueue_scripts', 'vaulthost_logo_options_enqueue_scripts');
+
 
 /* ------------------------------------------------------------------------ * 
  * Contact Options
