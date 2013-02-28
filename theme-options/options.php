@@ -182,6 +182,18 @@ function vaulthost_logo_options_enqueue_scripts() {
 }
 add_action('admin_enqueue_scripts', 'vaulthost_logo_options_enqueue_scripts');
 
+function vaulthost_logo_options_setup() {
+	global $pagenow;
+
+	if ('media-upload.php' == $pagenow || 'async-upload.php' == $pagenow) {
+		add_filter('gettext','replace_thickbox_text', 1, 3);
+	} 
+}
+add_action('admin_init', 'vaulthost_logo_options_setup');
+
+function replace_thickbox_text($translated_text, $text, $domain) {
+	if ('Insert into Post')
+}
 
 /* ------------------------------------------------------------------------ * 
  * Contact Options
