@@ -160,7 +160,7 @@ function vaulthost_logo_callback() {
 
 	$options = get_option('vaulthost_theme_general_options');?>
 
-	<input type="text" id="logourl" name="vaulthost_theme_general_options[logourl]" value="<?php echo esc_url($options['logourl']); ?>" />
+	<input type="text" id="logo_url" name="vaulthost_theme_general_options[logourl]" value="<?php echo esc_url($options['logourl']); ?>" />
 	<input id="upload_logo_button" type="button" class="button" value="<?php _e('Upload Logo', 'vaulthost'); ?>" />
 	<span class="description"><?php _e('Upload an image for the website logo.', 'vaulthost'); ?></span>
 
@@ -192,7 +192,13 @@ function vaulthost_logo_options_setup() {
 add_action('admin_init', 'vaulthost_logo_options_setup');
 
 function replace_thickbox_text($translated_text, $text, $domain) {
-	if ('Insert into Post')
+	if ('Insert into Post' == $text) {
+		$referer = strpos(wp_get_referer(), 'vaulthost-settings');
+		if ($referer != '') {
+			return __('I want this to be my logo!', 'vaulthost');
+		}
+	}
+	return $translated_text;
 }
 
 /* ------------------------------------------------------------------------ * 
