@@ -131,6 +131,7 @@ function vaulthost_init_general_options() {
 	add_settings_field( 'description', 'Description:', 'vaulthost_description_callback', 'vaulthost_theme_general_options', 'general_options_section');
 	add_settings_section( 'logo_options', 'Logo Options', 'vaulthost_logo_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
+	add_settings_field( 'logo_preview', 'Logo Preview:', 'vaulthost_logo_preview_callback', 'vaulthost_theme_general_options', 'logo_options');
 	register_setting( 'vaulthost_theme_general_options', 'vaulthost_theme_general_options' );
 
 }
@@ -152,19 +153,34 @@ function vaulthost_description_callback() {
 	echo '<input type="text" id="description" name="vaulthost_theme_general_options[description]" value="' . $options['description'] . '">';
 }
 
+/* ------------------------------------------------------------------------ * 
+ * Logo Options
+ * ------------------------------------------------------------------------ */   
+
 function vaulthost_logo_options_callback() {
 	echo '<p>Set the website logo here:</p>';
 }
 
 function vaulthost_logo_callback() {
 
-	$options = get_option('vaulthost_theme_general_options');?>
+	$options = get_option('vaulthost_theme_general_options'); ?>
 
 	<input type="text" id="logo_url" name="vaulthost_theme_general_options[logourl]" value="<?php echo esc_url($options['logourl']); ?>" />
 	<input id="upload_logo_button" type="button" class="button" value="<?php _e('Upload Logo', 'vaulthost'); ?>" />
 	<span class="description"><?php _e('Upload an image for the website logo.', 'vaulthost'); ?></span>
 
 	<?php
+}
+
+function vaulthost_logo_preview_callback() {
+
+	$options = get_option('vaulthost_theme_general_options'); ?>
+
+	<div id="upload_logo_preview" style="min-height: 100px;">
+		<img style="max-width:100%;" src="<?php echo esc_url($options['logourl']); ?>" />
+	</div>
+
+<?php
 }
 
 function vaulthost_logo_options_enqueue_scripts() {
