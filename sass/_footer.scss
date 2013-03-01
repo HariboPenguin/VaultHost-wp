@@ -4,7 +4,15 @@ $footerboxmargin: 15px;
 footer {
 	background: #2d2d2d;
 	color: $lighttextcolor;
-	height: 300px;
+	// height: 300px;
+
+	a {
+		color: $lighttexthighlightcolor;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 .footerbox {
@@ -19,4 +27,11 @@ footer {
 		border-bottom: 3px solid #5b5b5b;
 		font-size: 16px;
 	}
+}
+
+#twitter_update_list li {
+	list-style-type: none;
+	border-bottom: 2px solid #5b5b5b;
+	padding: 10px 3px;
+	font-size: 13px;
 }
