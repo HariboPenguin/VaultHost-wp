@@ -291,6 +291,10 @@ header h1 {
     float: none;
   }
 }
+header #logo {
+  float: left;
+  margin-top: 50px;
+}
 
 nav {
   float: right;
