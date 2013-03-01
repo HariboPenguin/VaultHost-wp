@@ -58,6 +58,10 @@ body {
 	@include clearfix;
 }
 
+#blog-wrapper {
+	overflow: visible;
+}
+
 a {
 	text-decoration: none;
 }

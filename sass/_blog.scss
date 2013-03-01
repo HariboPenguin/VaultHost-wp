@@ -1,0 +1,46 @@
+/* ------------------------------------------------------------------------ * 
+ * Blog Page Styling
+ * ------------------------------------------------------------------------ */
+
+ .postdate {
+ 	background: white;
+ 	float: left;
+ 	position: relative;
+ 	left: -70px;
+ 	width: 60px;
+ 	text-align: center;
+ 	// padding: 5px;
+ 	margin-top: 10px;
+
+ 	.day, .year {
+ 		background: $darktexthighlightcolor;
+ 		color: $lighttextcolor;
+ 		padding: 1px;
+ 	}
+
+ 	.day {
+ 		@include border-top-radius(5px);
+ 	}
+
+ 	.month {
+ 		padding: 5px;
+ 		border: 1px solid black;
+ 	}
+
+ 	.year {
+ 		@include border-bottom-radius(5px);
+ 	}
+ }
+
+ // .posttime {
+ // 	float: right;
+ // }
+
+ article {
+ 	background: $lighttextcolor;
+ 	float: left;
+ 	margin-left: -68px;
+ 	margin-bottom: 20px;
+ 	@include border-radius(20px);
+ 	padding: 10px;
+ }

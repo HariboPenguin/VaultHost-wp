@@ -31,6 +31,8 @@ DESCRIPTION: Empty content layout
 @import "footer";
 @import "bottombar";
 
+@import "blog";
+
 // Debug Mode Styling
 body {
 	@if $debugmode {
