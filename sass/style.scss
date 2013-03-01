@@ -1,0 +1,94 @@
+/*
+Theme Name: VaultHost
+Theme URI: http://www.d-tomlinson.co.uk/vaulthost/
+Author URI: http://www.d-tomlinson.co.uk/
+Description: VaultHost Professional Web Hosting Wordpress Theme. 
+Author: Daniel Tomlinson 
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Tags: microformats, one-column 
+
+VaultHost Theme, (c) 2013 d-tomlinson
+VaultHost Theme is a derivative of TwentyTen, (c) The WordPress Team
+*/
+
+@import "reset";
+/* =Layout
+-------------------------------------------------------------- */
+
+/*
+LAYOUT: One column
+DESCRIPTION: Empty content layout 
+*/
+
+@import "base";
+@import "topbar";
+@import "header";
+@import "slider";
+@import "services";
+@import "features";
+@import "footer";
+@import "bottombar";
+
+// Debug Mode Styling
+body {
+	@if $debugmode {
+		background: white;
+	}
+}
+
+#topbar {
+	@if $debugmode {
+		background: yellow;
+	}
+}
+
+.wrapper {
+	@if $debugmode {
+		background: red;
+		opacity: 0.5;
+	}
+}
+
+header {
+	@if $debugmode {
+		background: orange;
+	}
+}
+
+#sliderarea {
+	@if $debugmode {
+		background: gray;
+	}
+}
+
+#services {
+	@if $debugmode {
+		background: aqua;
+	}
+}
+
+#features {
+	@if $debugmode {
+		background: blue;
+	}
+}
+
+#featuredcustomers {
+	@if $debugmode {
+		background: brown;
+	}
+}
+
+footer {
+	@if $debugmode {
+		background: green;
+	}
+}
+
+#bottombar {
+	@if $debugmode {
+		background: teal;
+	}
+}

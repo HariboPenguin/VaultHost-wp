@@ -1,0 +1,55 @@
+$featureboxmargin: 10px;
+$featureboxcolumns: 4;
+#features {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.featurebox {
+	width: percentage(($wrapperwidth/$featureboxcolumns - $featureboxmargin*2)/$wrapperwidth);
+	float: left;
+	padding: percentage($featureboxmargin/$wrapperwidth);
+	text-align: center;
+
+	h5 {
+		font-weight: bold;
+		font-size: 15px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		color: $darktextcolor;
+
+		@include respond-to(smartphone, landscape) {
+			margin-left: 20px;
+			margin-top: 10px;
+			margin-bottom: 0px;
+			float: left;
+		}
+
+	}
+
+	p {
+		color: $darktextcolor;
+		font-size: 13px;
+
+		@include respond-to(smartphone, landscape) {
+			float: left;
+		}
+
+	}
+
+	img {
+		@include respond-to(smartphone, landscape) {
+			float: left;
+		}
+	}
+
+	@include respond-to(smartphone, landscape) {
+		text-align: left;
+		float: none;
+		width: 100%;
+	}
+}
+
+#featuresboxcontainer {
+	overflow: hidden;
+}

@@ -1,0 +1,23 @@
+#bottombar {
+	padding: 15px;
+	background: #191919;
+	color: $lighttextcolor;
+	font-size: 12px;
+
+	p {
+		float: left;
+		padding: 1px;
+	}
+
+	a {
+		color: $lighttextcolor;
+		padding: 1px;
+		&:hover {
+			color: #f2f2f2;
+		}
+	}
+}
+
+#bottomlinks {
+	float: right;
+}

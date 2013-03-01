@@ -1,0 +1,67 @@
+/* -----Top Bar----- */
+$topbarmargin: 17px;
+#topbar {
+	background: #2d2d2d;
+	color: $lighttextcolor;
+	// height: 45px;
+	@include clearfix;
+	font-size: 12px;
+
+	ul {
+		float: right;
+		margin-top: $topbarmargin - 2;
+		margin-bottom: $topbarmargin -2;
+		text-transform: uppercase;
+		li {
+			display: inline;
+			margin-left: 20px;
+			a {
+				color: $lighttextcolor;
+				&:hover {
+					color: $lighttexthighlightcolor;
+				}
+			}
+		}
+
+		@include respond-to(tablet, landscape) {
+			float: none;
+			text-align: center;
+			margin-bottom: 10px;
+			margin-right: 20px;
+		}
+	}
+
+	i {
+		margin-right: 7px;
+		padding-top: -5px;
+	}
+}
+
+#topbar ul #chattopbarlink {
+	@include respond-to(tablet, portrait) {
+		display: none;
+	}
+}
+
+#topbar ul #contacttopbarlink {
+	@include respond-to(smartphone, landscape) {
+		display: none;
+	}
+}
+
+#currentoffer {
+	margin-top: $topbarmargin;
+	margin-bottom: $topbarmargin;
+	float: left;
+
+	span {
+		font-weight: bold;
+	}
+
+	@include respond-to(tablet, landscape) {
+		float: none;
+		text-align: center;
+	}
+
+}
+/* -----End Top Bar----- */

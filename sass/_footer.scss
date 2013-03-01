@@ -1,0 +1,22 @@
+$footerboxcolumns: 4;
+$footerboxmargin: 15px;
+
+footer {
+	background: #2d2d2d;
+	color: $lighttextcolor;
+	height: 300px;
+}
+
+.footerbox {
+	float: left;
+	width: percentage(($wrapperwidth/$footerboxcolumns - $footerboxmargin*2)/$wrapperwidth);
+	margin: $footerboxmargin;
+	margin-top: 30px;
+
+	h6 {
+		// padding-left: 3px;
+		padding-bottom: 5px;
+		border-bottom: 3px solid #5b5b5b;
+		font-size: 16px;
+	}
+}

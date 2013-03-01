@@ -1,0 +1,65 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/";
+
+//Responsive widths
+$smartphone-max-width: 320px;
+$smartphone-landscape-max-width: 480px;
+$tablet-max-width: 600px;
+$tablet-landscape-max-width: 800px;
+$desktop-max-width: 1024px;
+
+// Mixins
+@mixin defaultfont() {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+@mixin respond-to($media, $orientation) {
+	@if $media == smartphone {
+		@if $orientation == portrait {
+			@media only screen and (max-width: $smartphone-max-width) { @content;}
+		}
+		@else if $orientation == landscape {
+			@media only screen and (max-width: $smartphone-landscape-max-width) { @content;}
+		}
+	}
+	@else if $media == tablet {
+		@if $orientation == portrait {
+			@media only screen and (max-width: $tablet-max-width) { @content;}
+		}
+		@else if $orientation == landscape {
+			@media only screen and (max-width: $tablet-landscape-max-width) { @content;}
+		}
+	}
+}
+
+//Debug Mode Toggle
+$debugmode: false;
+
+$mainbgcolor: #f2f2f2;
+$wrapperwidth: 960px;
+
+//Text Colors
+$lighttextcolor: #bbbbbb;
+$lighttexthighlightcolor: #f2f2f2;
+$darktextcolor: #505050;
+$darktexthighlightcolor: #000000;
+//End Text Colors
+
+/* -----MISC----- */
+
+body {
+	background: $mainbgcolor;
+	@include defaultfont;
+}
+
+.wrapper {
+	max-width: $wrapperwidth;
+	margin: 0 auto;
+	@include clearfix;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* -----END MISC----- */
