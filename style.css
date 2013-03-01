@@ -12,10 +12,8 @@ Tags: microformats, one-column
 VaultHost Theme, (c) 2013 d-tomlinson
 VaultHost Theme is a derivative of TwentyTen, (c) The WordPress Team
 */
-
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,164 +23,184 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	background: transparent;
-	border: 0;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
-body {
-	background: red
-	line-height: 1;
-}
+
 h1, h2, h3, h4, h5, h6 {
-	clear: both;
-	font-weight: normal;
+  clear: both;
+  font-weight: normal;
 }
+
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
 blockquote {
-	quotes: none;
+  quotes: none;
 }
+
 blockquote:before, blockquote:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
+
 del {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
+
 /* tables still need 'cellspacing="0"' in the markup */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+
 a img {
-	border: none;
+  border: none;
 }
-#site-title{
-	padding: 2px;	
+
+#site-title {
+  padding: 2px;
 }
-#site-description{
-	padding: 2px;	
+
+#site-description {
+  padding: 2px;
 }
-#main{
-	margin: 4px;
+
+#main {
+  margin: 4px;
 }
-#container{
-	margin: 4px;
+
+#container {
+  margin: 4px;
 }
-.post{
-	padding: 4px;
+
+.post {
+  padding: 4px;
 }
-.menu{
-	/*padding: 4px;*/
+
+.menu {
+  /*padding: 4px;*/
 }
-.entry-title{
-	margin: 2px;
+
+.entry-title {
+  margin: 2px;
 }
-.entry-meta{
-	margin: 4px;
+
+.entry-meta {
+  margin: 4px;
 }
-.entry-content{
-	margin: 4px;
+
+.entry-content {
+  margin: 4px;
 }
-.entry-content p{
-	padding: 4px;
+
+.entry-content p {
+  padding: 4px;
 }
-#commentform{
-	display: table;
-	width: 60%;
+
+#commentform {
+  display: table;
+  width: 60%;
 }
-#commentform p{
-	display: table-row;
-	margin: 4px;
+
+#commentform p {
+  display: table-row;
+  margin: 4px;
 }
-#commentform label{
-	display: table-cell;
-	width: 70%;
-	vertical-align: top;
+
+#commentform label {
+  display: table-cell;
+  width: 70%;
+  vertical-align: top;
 }
-#commentform input{
-	display: table-cell;
+
+#commentform input {
+  display: table-cell;
 }
-.children li{
-	margin-left: 10px;
+
+.children li {
+  margin-left: 10px;
 }
-.commentlist li{
-	padding-top: 4px;
-	padding-bottom: 4px;
-	border-bottom: 1px solid #000000;
+
+.commentlist li {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid black;
 }
-.recentcomments{
-	padding-top: 4px;
-	padding-bottom: 4px;
-	border-bottom: 1px solid #000000;
+
+.recentcomments {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid black;
 }
-.gallery .gallery-caption{
-	color: #000000;
+
+.gallery .gallery-caption {
+  color: #000000;
 }
-.home .sticky{
-	border: none;
+
+.home .sticky {
+  border: none;
 }
-.bypostauthor{
-	border: none;
+
+.bypostauthor {
+  border: none;
 }
+
 .aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .alignleft {
-	float: left;
+  float: left;
 }
 
 .alignright {
-	float: right;
+  float: right;
 }
+
 .wp-caption {
-	border: 1px solid #ddd;
-	text-align: center;
-	background-color: #f3f3f3;
-	padding-top: 4px;
-	margin: 10px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+  border: 1px solid #dddddd;
+  text-align: center;
+  background-color: #f3f3f3;
+  padding-top: 4px;
+  margin: 10px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .wp-caption img {
-	margin: 0;
-	padding: 0;
-	border: 0 none;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
 }
 
 .wp-caption-dd {
-	font-size: 11px;
-	line-height: 17px;
-	padding: 0 4px 5px;
-	margin: 0;
+  font-size: 11px;
+  line-height: 17px;
+  padding: 0 4px 5px;
+  margin: 0;
 }
 
 /* =Layout
 -------------------------------------------------------------- */
-
 /*
 LAYOUT: One column
 DESCRIPTION: Empty content layout 
 */
-
-
 /* -----MISC----- */
-/* line 50, ../sass/_base.scss */
 body {
   background: #f2f2f2;
   font-family: "Droid Sans", sans-serif;
 }
 
-/* line 55, ../sass/_base.scss */
 .wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -190,14 +208,12 @@ body {
   *zoom: 1;
 }
 
-/* line 61, ../sass/_base.scss */
 a {
   text-decoration: none;
 }
 
 /* -----END MISC----- */
 /* -----Top Bar----- */
-/* line 3, ../sass/_topbar.scss */
 #topbar {
   background: #2d2d2d;
   color: #bbbbbb;
@@ -205,28 +221,23 @@ a {
   *zoom: 1;
   font-size: 12px;
 }
-/* line 10, ../sass/_topbar.scss */
 #topbar ul {
   float: right;
   margin-top: 15px;
   margin-bottom: 17px -2;
   text-transform: uppercase;
 }
-/* line 15, ../sass/_topbar.scss */
 #topbar ul li {
   display: inline;
   margin-left: 20px;
 }
-/* line 18, ../sass/_topbar.scss */
 #topbar ul li a {
   color: #bbbbbb;
 }
-/* line 20, ../sass/_topbar.scss */
 #topbar ul li a:hover {
   color: #f2f2f2;
 }
 @media only screen and (max-width: 800px) {
-  /* line 10, ../sass/_topbar.scss */
   #topbar ul {
     float: none;
     text-align: center;
@@ -234,38 +245,32 @@ a {
     margin-right: 20px;
   }
 }
-/* line 34, ../sass/_topbar.scss */
 #topbar i {
   margin-right: 7px;
   padding-top: -5px;
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 40, ../sass/_topbar.scss */
   #topbar ul #chattopbarlink {
     display: none;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 46, ../sass/_topbar.scss */
   #topbar ul #contacttopbarlink {
     display: none;
   }
 }
 
-/* line 52, ../sass/_topbar.scss */
 #currentoffer {
   margin-top: 17px;
   margin-bottom: 17px;
   float: left;
 }
-/* line 57, ../sass/_topbar.scss */
 #currentoffer span {
   font-weight: bold;
 }
 @media only screen and (max-width: 800px) {
-  /* line 52, ../sass/_topbar.scss */
   #currentoffer {
     float: none;
     text-align: center;
@@ -274,7 +279,6 @@ a {
 
 /* -----End Top Bar----- */
 /* -----Header----- */
-/* line 3, ../sass/_header.scss */
 header h1 {
   font-size: 48px;
   font-weight: bold;
@@ -282,14 +286,12 @@ header h1 {
   float: left;
 }
 @media only screen and (max-width: 800px) {
-  /* line 3, ../sass/_header.scss */
   header h1 {
     text-align: center;
     float: none;
   }
 }
 
-/* line 16, ../sass/_header.scss */
 nav {
   float: right;
   margin: 45px 0;
@@ -305,12 +307,10 @@ nav {
   -moz-box-shadow: 0px 0px 24px 2px #e5e1e1;
   box-shadow: 0px 0px 24px 2px #e5e1e1;
 }
-/* line 25, ../sass/_header.scss */
 nav ul li {
   display: inline-block;
   margin: -2px;
 }
-/* line 29, ../sass/_header.scss */
 nav ul li a {
   display: block;
   font-size: 12px;
@@ -319,25 +319,21 @@ nav ul li a {
   padding: 20px 25px;
   overflow: hidden;
 }
-/* line 37, ../sass/_header.scss */
 nav ul li a:hover {
   color: blue;
 }
 @media only screen and (max-width: 480px) {
-  /* line 29, ../sass/_header.scss */
   nav ul li a {
     text-align: center;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 25, ../sass/_header.scss */
   nav ul li {
     display: block;
     border-bottom: 1px solid #e9e9e9;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 16, ../sass/_header.scss */
   nav {
     float: none;
     margin-left: 20px;
@@ -347,59 +343,49 @@ nav ul li a:hover {
 }
 
 /* -----End Header-----*/
-/* line 1, ../sass/_slider.scss */
 #sliderarea {
   background: #2d2d2d;
 }
 
-/* line 5, ../sass/_slider.scss */
 .slider-wrapper {
   border: none;
   max-height: 400px;
 }
 
-/* line 1, ../sass/_services.scss */
 .sectionheading {
   text-align: center;
   color: #505050;
   margin-bottom: 20px;
 }
-/* line 6, ../sass/_services.scss */
 .sectionheading h3 {
   font-weight: bold;
   font-size: 33px;
   margin-bottom: 7px;
 }
-/* line 12, ../sass/_services.scss */
 .sectionheading p {
   font-size: 15px;
 }
 
-/* line 17, ../sass/_services.scss */
 #services {
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-/* line 22, ../sass/_services.scss */
 #serviceboxcontainer {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 26, ../sass/_services.scss */
 .servicebox {
   width: 29.16667%;
   float: left;
   text-align: center;
   margin: 2.08333%;
 }
-/* line 33, ../sass/_services.scss */
 .servicebox img {
   margin-top: 20px;
   height: 92px;
 }
-/* line 38, ../sass/_services.scss */
 .servicebox h4 {
   color: #505050;
   font-weight: bold;
@@ -407,36 +393,30 @@ nav ul li a:hover {
   margin-top: 20px;
   margin-bottom: 15px;
 }
-/* line 46, ../sass/_services.scss */
 .servicebox p {
   color: #505050;
   font-size: 15px;
 }
 @media only screen and (max-width: 480px) {
-  /* line 26, ../sass/_services.scss */
   .servicebox {
     width: 95.83333%;
   }
 }
 
-/* line 82, ../sass/_services.scss */
 .serviceboxdescription {
   margin-bottom: 15px;
 }
 
-/* line 86, ../sass/_services.scss */
 .serviceboxprice {
   text-align: left;
   float: left;
   overflow: hidden;
 }
-/* line 92, ../sass/_services.scss */
 .serviceboxprice span {
   font-weight: bold;
   font-size: 34px;
 }
 
-/* line 98, ../sass/_services.scss */
 .serviceboxmorebutton {
   -webkit-box-shadow: inset 0px 1px 0px 0px #bee2f9;
   -moz-box-shadow: inset 0px 1px 0px 0px #bee2f9;
@@ -464,7 +444,6 @@ nav ul li a:hover {
   text-transform: uppercase;
   text-shadow: 0px 1px 0px black;
 }
-/* line 126, ../sass/_services.scss */
 .serviceboxmorebutton:hover {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
   background: -moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
@@ -475,26 +454,22 @@ nav ul li a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
   background-color: #468ccf;
 }
-/* line 138, ../sass/_services.scss */
 .serviceboxmorebutton:active {
   position: relative;
   top: 1px;
 }
 
-/* line 3, ../sass/_features.scss */
 #features {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-/* line 8, ../sass/_features.scss */
 .featurebox {
   width: 22.91667%;
   float: left;
   padding: 1.04167%;
   text-align: center;
 }
-/* line 14, ../sass/_features.scss */
 .featurebox h5 {
   font-weight: bold;
   font-size: 15px;
@@ -503,7 +478,6 @@ nav ul li a:hover {
   color: #505050;
 }
 @media only screen and (max-width: 480px) {
-  /* line 14, ../sass/_features.scss */
   .featurebox h5 {
     margin-left: 20px;
     margin-top: 10px;
@@ -511,25 +485,21 @@ nav ul li a:hover {
     float: left;
   }
 }
-/* line 30, ../sass/_features.scss */
 .featurebox p {
   color: #505050;
   font-size: 13px;
 }
 @media only screen and (max-width: 480px) {
-  /* line 30, ../sass/_features.scss */
   .featurebox p {
     float: left;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 40, ../sass/_features.scss */
   .featurebox img {
     float: left;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 8, ../sass/_features.scss */
   .featurebox {
     text-align: left;
     float: none;
@@ -537,55 +507,46 @@ nav ul li a:hover {
   }
 }
 
-/* line 53, ../sass/_features.scss */
 #featuresboxcontainer {
   overflow: hidden;
 }
 
-/* line 4, ../sass/_footer.scss */
 footer {
   background: #2d2d2d;
   color: #bbbbbb;
   height: 300px;
 }
 
-/* line 10, ../sass/_footer.scss */
 .footerbox {
   float: left;
   width: 21.875%;
   margin: 15px;
   margin-top: 30px;
 }
-/* line 16, ../sass/_footer.scss */
 .footerbox h6 {
   padding-bottom: 5px;
   border-bottom: 3px solid #5b5b5b;
   font-size: 16px;
 }
 
-/* line 1, ../sass/_bottombar.scss */
 #bottombar {
   padding: 15px;
   background: #191919;
   color: #bbbbbb;
   font-size: 12px;
 }
-/* line 7, ../sass/_bottombar.scss */
 #bottombar p {
   float: left;
   padding: 1px;
 }
-/* line 12, ../sass/_bottombar.scss */
 #bottombar a {
   color: #bbbbbb;
   padding: 1px;
 }
-/* line 15, ../sass/_bottombar.scss */
 #bottombar a:hover {
   color: #f2f2f2;
 }
 
-/* line 21, ../sass/_bottombar.scss */
 #bottomlinks {
   float: right;
 }
