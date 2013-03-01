@@ -68,7 +68,14 @@ $(window).load(function() {
 	<div style="clear:both"></div>
 	<header>
 		<div class="wrapper">
-			<h1><?php bloginfo( 'name' ); ?></h1>
+			<?php $options = get_option('vaulthost_theme_general_options'); ?>
+			<?php if ( $options['logourl'] != '' ): ?>
+				<div id="logo">
+					<img src="<?php echo $options['logourl'] ;?>" />
+				</div>
+			<?php else: ?>
+				<h1><?php bloginfo( 'name' ); ?></h1>
+			<?php endif; ?>
 			<?php wp_nav_menu( array(
 				'theme_location'  => 'main-menu',
 				'menu'            => '', 
