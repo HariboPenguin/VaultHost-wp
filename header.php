@@ -71,7 +71,7 @@ $(window).load(function() {
 			<?php $options = get_option('vaulthost_theme_general_options'); ?>
 			<?php if ( $options['logourl'] != '' ): ?>
 				<div id="logo">
-					<img src="<?php echo $options['logourl'] ;?>" />
+					<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $options['logourl'] ;?>" /></a>
 				</div>
 			<?php else: ?>
 				<h1><?php bloginfo( 'name' ); ?></h1>
