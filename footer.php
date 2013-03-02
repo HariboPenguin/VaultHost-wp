@@ -23,8 +23,7 @@
 				<ul>
 					<?php $the_query = new WP_Query('showposts=3'); ?>
 					<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-					<li><a href="<?php the_permalink(); ?>" title=""><?php the_title(); ?></a></li>
-					<li><?php the_excerpt(__('(more...)'));?></li>
+					<li><a href="<?php the_permalink(); ?>" title=""><?php the_title(); ?></a><p><?php the_excerpt(__('(more...)'));?></p></li>
 					<?php endwhile; ?>
 				</ul>
 			</div>
