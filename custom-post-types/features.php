@@ -24,7 +24,7 @@ function init_features_post_type() {
 
 			'public' => true,
 			'menu_position' => 15,
-			'supports' => array('title', 'editor', 'excerpt', 'comments', 'thumbnail'),
+			'supports' => array('title', 'editor', 'thumbnail'),
 			'taxonomies' => array( '' ),
 			'menu_icon' => null,
 			'has_archive' => true
