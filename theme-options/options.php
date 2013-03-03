@@ -124,6 +124,7 @@ function vaulthost_init_general_options() {
 	}
 
 	add_settings_section( 'general_options_section', 'General Options', 'vaulthost_general_options_callback', 'vaulthost_theme_general_options' );
+	add_settings_field( 'current_promo', 'Current Promotion:', 'vaulthost_current_promo_callback', 'vaulthost_theme_general_options', 'general_options_section');
 	add_settings_field( 'description', 'Description:', 'vaulthost_description_callback', 'vaulthost_theme_general_options', 'general_options_section');
 	add_settings_section( 'logo_options', 'Logo Options', 'vaulthost_logo_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
@@ -135,6 +136,18 @@ add_action('admin_init', 'vaulthost_init_general_options');
 
 function vaulthost_general_options_callback() {
 	echo '<p>General Options Thing</p>';
+}
+
+function vaulthost_current_promo_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$currentpromo = '';
+	if (isset($options['current_promo'])) {
+		$currentpromo = $options['current_promo'];
+	}
+
+	echo '<input type="text" id="current_promo" name="vaulthost_theme_general_options[current_promo]" value="' . $options['current_promo'] . '">';
 }
 
 function vaulthost_description_callback() {

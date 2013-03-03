@@ -45,7 +45,8 @@ $(window).load(function() {
 
 	<div id="topbar">
 		<div class="wrapper">
-			<p id="currentoffer"><span>CURRENT PROMO:</span> 25% OFF ALL PACKAGES!</p>
+			<?php $options = get_option('vaulthost_theme_general_options'); ?>
+			<p id="currentoffer"><span>CURRENT PROMO:</span> <?php echo $options['current_promo']; ?></p>
 			<?php wp_nav_menu( array(
 				'theme_location'  => 'topbar-menu',
 				'menu'            => '', 
