@@ -51,7 +51,7 @@ function features_custom_columns($column) {
 	global $post;
 	switch ($column) {
 		case 'icon':
-			the_post_thumbnail();
+			the_post_thumbnail(array(64,64));
 			break;
 		case 'description':
 			the_excerpt();
