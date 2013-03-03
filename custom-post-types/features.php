@@ -85,7 +85,11 @@ function features_updated_messages($messages) {
 
 add_filter('post_updated_messages', 'features_updated_messages');
 
-function my_contextual_help( $contextual_help, $screen_id, $screen ) { 
+/* ------------------------------------------------------------------------ * 
+ * Add contextural help
+ * ------------------------------------------------------------------------ */   
+
+function features_contextual_help( $contextual_help, $screen_id, $screen ) { 
 	if ( 'edit-features' == $screen->id ) {
 
 		$contextual_help = '<h2>Features</h2>
@@ -100,6 +104,6 @@ function my_contextual_help( $contextual_help, $screen_id, $screen ) {
 	}
 	return $contextual_help;
 }
-add_action( 'contextual_help', 'my_contextual_help', 10, 3 );
+add_action( 'contextual_help', 'features_contextual_help', 10, 3 );
 
 ?>
