@@ -79,6 +79,8 @@ function features_updated_messages($messages) {
 		6 => sprintf( __('Feature Published. <a href="%s">View Feature</a>'), esc_url( get_home_url() )),
 		7 => __('Feature Saved.'),
 		8 => sprintf( __('Feature Submitted. <a href="%s">View Feature</a>'), esc_url( get_home_url() )),
+		9 => sprintf( __('Feature scheduled for: <strong>%1$s</strong>.'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) )),
+		10 => sprintf( __('Feature draft updated.')),
 	);
 	return $messages;
 }
