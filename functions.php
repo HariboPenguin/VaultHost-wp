@@ -1,5 +1,7 @@
 <?php 
 
+add_theme_support( 'post-thumbnails' ); 
+
 register_menus();
 
 function register_menus() {
