@@ -44,3 +44,8 @@ include 'theme-options/options.php';
  * Packages Page
  * ------------------------------------------------------------------------ */ 
 include 'custom-post-types/packages.php';
+
+/* ------------------------------------------------------------------------ * 
+ * Features Custom Post Stuff
+ * ------------------------------------------------------------------------ */
+include 'custom-post-types/features.php';
