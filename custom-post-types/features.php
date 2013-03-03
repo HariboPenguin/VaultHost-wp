@@ -32,4 +32,31 @@ function init_features_post_type() {
 	);
 }
 
+add_filter('manage_edit-features_columns', 'feature_edit_columns');
+
+function feature_edit_columns() {
+	$columns = array(
+		'cb' => '<input type=\"checkbox\" />',
+		'icon' => 'Icon',
+		'title' => 'Feature',
+		'description' => "Description",
+	);
+
+	return $columns;
+}
+
+add_action('manage_posts_custom_column', 'features_custom_columns');
+
+function features_custom_columns($column) {
+	global $post;
+	switch ($column) {
+		case 'icon':
+			the_post_thumbnail();
+			break;
+		case 'description':
+			the_excerpt();
+			break;
+	}
+}
+
 ?>
