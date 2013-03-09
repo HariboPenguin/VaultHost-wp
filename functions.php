@@ -43,9 +43,19 @@ add_filter('admin_footer_text','change_footer_content');
 include 'theme-options/options.php';
 
 /* ------------------------------------------------------------------------ * 
- * Package Custom Post Type
+ * Web Hosting Custom Post Type
  * ------------------------------------------------------------------------ */ 
-include 'custom-post-types/packages.php';
+include 'custom-post-types/webhosting.php';
+
+/* ------------------------------------------------------------------------ * 
+ * VPS Custom Post Type
+ * ------------------------------------------------------------------------ */ 
+include 'custom-post-types/vps.php';
+
+/* ------------------------------------------------------------------------ * 
+ * Dedicated Servers Custom Post Type
+ * ------------------------------------------------------------------------ */ 
+include 'custom-post-types/dedicatedservers.php';
 
 /* ------------------------------------------------------------------------ * 
  * Features Custom Post Stuff
