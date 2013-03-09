@@ -43,7 +43,7 @@ add_filter('admin_footer_text','change_footer_content');
 include 'theme-options/options.php';
 
 /* ------------------------------------------------------------------------ * 
- * Packages Page
+ * Package Custom Post Type
  * ------------------------------------------------------------------------ */ 
 include 'custom-post-types/packages.php';
 
