@@ -35,4 +35,37 @@ function init_webhosting_post_type() {
 	);
 }
 
+/* ------------------------------------------------------------------------ * 
+ * Custom Meta 
+ * ------------------------------------------------------------------------ */
+
+add_action('add_meta_boxes', 'webhosting_price_box');
+
+function webhosting_price_box() {
+	add_meta_box( 'webhosting_price_box', __('Package Price', 'vaulthost'), 'webhosting_price_box_content', 'webhosting', 'side', 'core');
+}
+
+function webhosting_price_box_content($post) { ?>
+	<?php wp_nonce_field( plugin_basename( __FILE__ ), 'product_price_box_content_nonce' ); ?>
+	<p>
+		<label for="package-price"><?php _e("Price:"); ?></label>
+		<br />
+		<input id="package-price" class="" type="text" name="package-price" value="<?php echo esc_attr( get_post_meta( $object->ID, 'package-price', true ) ); ?>" size="30" />
+	</p>
+	<p>
+		<label for="package-price"><?php _e("Renewal Period:", 'vaulthost'); ?></label>
+		<br />
+		<select name="package-renewal">
+			<option value="monthly">Monthly</option>
+			<option value="quarterly">Quarterly</option>
+			<option value="yearly">Yearly</option>
+		</select>
+	</p>
+
+<?php }
+
+
+
+
+
 ?>
