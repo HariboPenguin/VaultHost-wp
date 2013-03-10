@@ -7,6 +7,54 @@
 	<?php the_content(); ?>
 	<?php endwhile; endif; ?>
 </div>
+
+<!-- Services Section -->
+<div id="services">
+	<div class="wrapper">
+		<div class="sectionheading">
+			<h3>Our Services</h3>
+			<p>Get up and running within minutes</p>
+		</div>
+		<div id="serviceboxcontainer">
+			<div class="servicebox">
+				<img class="alignnone size-full wp-image-100" alt="Web Hosting" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/web-hosting-icon.png" />
+				<h4 class="serviceboxtitle">Web Hosting</h4>
+				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
+				<p class="serviceboxprice">From
+					<br>
+					<span>£2.99</span> p/m
+				</p>
+				<a class="serviceboxmorebutton" href="#">Learn More</a>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="servicebox">
+				<img class="alignnone size-full wp-image-100" alt="Web Hosting" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/VPS-icon.png" />
+				<h4 class="serviceboxtitle">VPS</h4>
+				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
+				<p class="serviceboxprice">From
+					<br>
+					<span>£2.99</span> p/m
+				</p>
+				<a class="serviceboxmorebutton" href="#">Learn More</a>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="servicebox">
+				<img class="alignnone size-full wp-image-100" alt="Web Hosting" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/Dedicated-Servers-Icon.png" />
+				<h4 class="serviceboxtitle">Dedicated Servers</h4>
+				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
+				<p class="serviceboxprice">From
+					<br>
+					<span>£2.99</span> p/m
+				</p>
+				<a class="serviceboxmorebutton" href="#">Learn More</a>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Services Section -->
+
+<!-- Features Section -->
 <?php $features = new WP_Query('post_type=features'); ?>
 <?php if ($features->have_posts()) { ?>
 	<div id="features">
@@ -34,5 +82,6 @@
 <?php 
 }
 ?>
+<!-- End Features Section -->
 
 <?php get_footer(); ?>
