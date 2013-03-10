@@ -43,7 +43,7 @@ add_action('add_meta_boxes', 'setup_webhosting_meta_boxes');
 
 function setup_webhosting_meta_boxes() {
 	add_meta_box( 'webhosting_price_box', __('Monthly Package Price', 'vaulthost'), 'webhosting_price_box_content', 'webhosting', 'side', 'core');
-	add_meta_box( 'webhosting_package_options_box', __('Package Options', 'vaulthost'), 'webhosting_package_options_box_content', 'webhosting', 'side', 'low');
+	add_meta_box( 'webhosting_package_options_box', __('Package Options', 'vaulthost'), 'webhosting_package_options_box_content', 'webhosting', 'normal', 'low');
 }
 
 /* ------------------------------------------------------------------------ * 
@@ -80,8 +80,8 @@ add_action('save_post', 'add_webhosting_price_box_fields', 10, 2);
 
 function webhosting_package_options_box_content($package) {
 
-	$storage = esc_html(get_post_meta( $package->ID, 'package_storage', true));
-	$bandwidth = esc_html(get_post_meta( $package->ID, 'package_bandwidth', true));
+	$storage = intval(get_post_meta( $package->ID, 'package_storage', true));
+	$bandwidth = intval(get_post_meta( $package->ID, 'package_bandwidth', true));
 	$domains = intval(get_post_meta( $package->ID, 'package_domains', true));
 	$subdomains = intval(get_post_meta( $package->ID, 'package_subdomains', true));
 	$emailaccounts = intval(get_post_meta( $package->ID, 'package_emailaccounts', true));
@@ -203,11 +203,11 @@ function webhosting_orderby($query) {
 
 	if ('storage' == $orderby) {
 		$query->set('meta_key', 'package_storage');
-		$query->set('orderby', 'meta_value');
+		$query->set('orderby', 'meta_value_num');
 	}
 	if ('bandwidth' == $orderby) {
 		$query->set('meta_key', 'package_bandwidth');
-		$query->set('orderby', 'meta_value');
+		$query->set('orderby', 'meta_value_num');
 	}
 	if ('domains' == $orderby) {
 		$query->set('meta_key', 'package_domains');
@@ -241,10 +241,10 @@ function webhosting_custom_columns($column) {
 	global $post;
 	switch ($column) {
 		case 'storage':
-			echo esc_html(get_post_meta( $post->ID, 'package_storage', true));
+			echo intval(get_post_meta( $post->ID, 'package_storage', true)) . 'GB';
 			break;
 		case 'bandwidth':
-			echo esc_html(get_post_meta( $post->ID, 'package_bandwidth', true));
+			echo intval(get_post_meta( $post->ID, 'package_bandwidth', true)) . 'GB';
 			break;
 		case 'domains':
 			echo intval(get_post_meta( $post->ID, 'package_domains', true));
