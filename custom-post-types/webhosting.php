@@ -45,12 +45,17 @@ function webhosting_price_box() {
 	add_meta_box( 'webhosting_price_box', __('Package Price', 'vaulthost'), 'webhosting_price_box_content', 'webhosting', 'side', 'core');
 }
 
-function webhosting_price_box_content($post) { ?>
-	<?php wp_nonce_field( plugin_basename( __FILE__ ), 'product_price_box_content_nonce' ); ?>
+function webhosting_price_box_content($package) { 
+
+	$package_price = floatval(get_post_meta( $package->ID, 'package_price', true));
+	$package_renewal = esc_html(get_post_meta( $package->ID, 'package_renewal', true));
+
+	?>
+
 	<p>
 		<label for="package-price"><?php _e("Price:"); ?></label>
 		<br />
-		<input id="package-price" class="" type="text" name="package-price" value="<?php echo esc_attr( get_post_meta( $object->ID, 'package-price', true ) ); ?>" size="30" />
+		<input id="package-price" class="" type="text" name="webhosting_package_price" value="<?php echo $package_price; ?>" size="30" />
 	</p>
 	<p>
 		<label for="package-price"><?php _e("Renewal Period:", 'vaulthost'); ?></label>
@@ -64,8 +69,15 @@ function webhosting_price_box_content($post) { ?>
 
 <?php }
 
+function add_webhosting_price_box_fields($webhosting_package_id, $webhosting_package) {
+	if ($webhosting_package->post_type == 'webhosting') {
+		if (isset($_POST['webhosting_package_price']) && $_POST['webhosting_package_price'] != '' ) {
+			update_post_meta( $webhosting_package_id, 'package_price', $_POST['webhosting_package_price']);
+		}
+	}
+}
 
-
+add_action('save_post', 'add_webhosting_price_box_fields', 10, 2);
 
 
 ?>
