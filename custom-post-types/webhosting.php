@@ -52,7 +52,7 @@ function setup_webhosting_meta_boxes() {
 
 function webhosting_price_box_content($package) { 
 
-	$package_price = floatval(get_post_meta( $package->ID, 'package_price', true));
+	$package_price = number_format(floatval(get_post_meta( $package->ID, 'package_price', true)), 2);
 
 	?>
 
@@ -262,7 +262,7 @@ function webhosting_custom_columns($column) {
 			echo intval(get_post_meta( $post->ID, 'package_ftpaccounts', true));
 			break;
 		case 'prices':
-			echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true));
+			echo '£' . number_format(floatval(get_post_meta( $post->ID, 'package_price', true)),2);
 			break;
 	}
 }

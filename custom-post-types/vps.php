@@ -48,7 +48,7 @@ function setup_vps_meta_boxes() {
 
 function vps_price_box_content($package) { 
 
-	$package_price = floatval(get_post_meta( $package->ID, 'package_price', true));
+	$package_price = number_format(floatval(get_post_meta( $package->ID, 'package_price', true)), 2);
 
 	?>
 
