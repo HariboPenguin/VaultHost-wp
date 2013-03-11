@@ -27,8 +27,9 @@
 					<?php $counter = 0; ?>
 					<?php while ($webhosting_packages->have_posts() && $counter < 1) {
 						$webhosting_packages->the_post();
+						$webhosting_price = floatval(get_post_meta( $post->ID, 'package_price', true));
 					?>
-					<span><?php echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true)); ?></span> p/m
+					<span><?php echo '£' . number_format($webhosting_price, 2); ?></span> p/m
 					<?php $counter++; ?>
 					<?php } ?>
 				</p>
@@ -47,8 +48,9 @@
 					<?php $counter = 0; ?>
 					<?php while ($vps_packages->have_posts() && $counter < 1) {
 						$vps_packages->the_post();
+						$vps_price = floatval(get_post_meta( $post->ID, 'package_price', true));
 					?>
-					<span><?php echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true)); ?></span> p/m
+					<span><?php echo '£' . number_format($vps_price, 2); ?></span> p/m
 					<?php $counter++; ?>
 					<?php } ?>
 				</p>
