@@ -36,17 +36,26 @@
 				<div style="clear: both;"></div>
 			</div>
 			<?php } ?>
+			<?php $vps_packages = new WP_Query(array('post_type' => 'vps', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
+			<?php if ($vps_packages->have_posts()) { ?>
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="VPS" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/VPS-icon.png" />
 				<h4 class="serviceboxtitle">VPS</h4>
 				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
 				<p class="serviceboxprice">From
 					<br>
-					<span>£2.99</span> p/m
+					<?php $counter = 0; ?>
+					<?php while ($vps_packages->have_posts() && $counter < 1) {
+						$vps_packages->the_post();
+					?>
+					<span><?php echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true)); ?></span> p/m
+					<?php $counter++; ?>
+					<?php } ?>
 				</p>
 				<a class="serviceboxmorebutton" href="#">Learn More</a>
 				<div style="clear: both;"></div>
 			</div>
+			<?php } ?>
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="Dedicated Servers" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/Dedicated-Servers-Icon.png" />
 				<h4 class="serviceboxtitle">Dedicated Servers</h4>
