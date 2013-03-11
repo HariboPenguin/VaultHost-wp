@@ -16,7 +16,7 @@
 			<p>Get up and running within minutes</p>
 		</div>
 		<div id="serviceboxcontainer">
-			<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'orderby' => 'package_price', 'order' => 'DESC')); ?>
+			<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'orderby' => 'package_price', 'order' => 'ASC')); ?>
 			<?php if ($webhosting_packages->have_posts()) { ?>
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="Web Hosting" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/web-hosting-icon.png" />
@@ -24,10 +24,12 @@
 				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
 				<p class="serviceboxprice">From
 					<br>
-					<?php while ($webhosting_packages->have_posts()) {
+					<?php $counter = 0; ?>
+					<?php while ($webhosting_packages->have_posts() && $counter < 1) {
 						$webhosting_packages->the_post();
 					?>
 					<span><?php echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true)); ?></span> p/m
+					<?php $counter++; ?>
 					<?php } ?>
 				</p>
 				<a class="serviceboxmorebutton" href="#">Learn More</a>
