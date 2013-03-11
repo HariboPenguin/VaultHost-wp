@@ -93,10 +93,12 @@ function webhosting_package_options_box_content($package) {
 		<tr>
 			<td><label for="storage"><?php _e("Storage Space:"); ?></label></td>
 			<td><input id="storage" type="text" name="webhosting_package_storage" value="<?php echo $storage; ?>" size="30" /></td>
+			<td><span class="description">GB</span></td>
 		</tr>
 		<tr>
 			<td><label for="bandwidth"><?php _e("Bandwidth:"); ?></label></td>
 			<td><input id="bandwidth" type="text" name="webhosting_package_bandwidth" value="<?php echo $bandwidth; ?>" size="30" /></td>
+			<td><span class="description">GB</span></td>
 		</tr>
 		<tr>
 			<td><label for="domains"><?php _e("Domains:"); ?></label></td>

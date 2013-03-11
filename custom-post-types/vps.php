@@ -89,6 +89,7 @@ function vps_package_options_box_content($package) {
 		<tr>
 			<td><label for="ram"><?php _e("RAM:"); ?></label></td>
 			<td><input id="ram" type="text" name="vps_package_ram" value="<?php echo $ram; ?>" size="30" /></td>
+			<td><span class="description">MB</span></td>
 		</tr>
 		<tr>
 			<td><label for="cpucores"><?php _e("CPU Cores:"); ?></label></td>
@@ -97,10 +98,12 @@ function vps_package_options_box_content($package) {
 		<tr>
 			<td><label for="storage"><?php _e("Storage Space:"); ?></label></td>
 			<td><input id="storage" type="text" name="vps_package_storage" value="<?php echo $storage; ?>" size="30" /></td>
+			<td><span class="description">GB</span></td>
 		</tr>
 		<tr>
 			<td><label for="bandwidth"><?php _e("Bandwidth:"); ?></label></td>
 			<td><input id="bandwidth" type="text" name="vps_package_bandwidth" value="<?php echo $bandwidth; ?>" size="30" /></td>
+			<td><span class="description">GB</span></td>
 		</tr>
 		<tr>
 			<td><label for="ipv4"><?php _e("IPv4 Addresses:"); ?></label></td>
@@ -113,6 +116,7 @@ function vps_package_options_box_content($package) {
 		<tr>
 			<td><label for="network"><?php _e("Network Speed:"); ?></label></td>
 			<td><input id="network" type="text" name="vps_package_network" value="<?php echo $network; ?>" size="30" /></td>
+			<td><span class="description">Mbps</span></td>
 		</tr>
 	</table>
 
