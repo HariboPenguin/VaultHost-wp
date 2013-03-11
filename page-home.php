@@ -16,7 +16,7 @@
 			<p>Get up and running within minutes</p>
 		</div>
 		<div id="serviceboxcontainer">
-			<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'orderby' => 'package_price', 'order' => 'ASC')); ?>
+			<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
 			<?php if ($webhosting_packages->have_posts()) { ?>
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="Web Hosting" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/web-hosting-icon.png" />
