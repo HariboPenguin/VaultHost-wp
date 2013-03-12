@@ -561,6 +561,10 @@ footer a:hover {
   font-size: 13px;
 }
 
+.footerbox p {
+  font-size: 13px;
+}
+
 #bottombar {
   padding: 15px;
   background: #191919;
