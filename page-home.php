@@ -16,12 +16,13 @@
 			<p>Get up and running within minutes</p>
 		</div>
 		<div id="serviceboxcontainer">
+			<?php $options = get_option('vaulthost_theme_general_options'); ?>
 			<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
 			<?php if ($webhosting_packages->have_posts()) { ?>
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="Web Hosting" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/web-hosting-icon.png" />
 				<h4 class="serviceboxtitle">Web Hosting</h4>
-				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
+				<p class="serviceboxdescription"><?php echo $options['webhosting_description']; ?></p>
 				<p class="serviceboxprice">From
 					<br>
 					<?php $counter = 0; ?>
@@ -42,7 +43,7 @@
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="VPS" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/VPS-icon.png" />
 				<h4 class="serviceboxtitle">VPS</h4>
-				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
+				<p class="serviceboxdescription"><?php echo $options['vps_description']; ?></p>
 				<p class="serviceboxprice">From
 					<br>
 					<?php $counter = 0; ?>
@@ -63,7 +64,7 @@
 			<div class="servicebox">
 				<img class="alignnone size-full wp-image-100" alt="Dedicated Servers" src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/Dedicated-Servers-Icon.png" />
 				<h4 class="serviceboxtitle">Dedicated Servers</h4>
-				<p class="serviceboxdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum magna neque, accumsan sit amet tempus.</p>
+				<p class="serviceboxdescription"><?php echo $options['dedicatedservers_description']; ?></p>
 				<p class="serviceboxprice">From
 					<br>
 					<?php $counter = 0; ?>

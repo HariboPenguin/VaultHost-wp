@@ -126,6 +126,10 @@ function vaulthost_init_general_options() {
 	add_settings_section( 'general_options_section', 'General Options', 'vaulthost_general_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'current_promo', 'Current Promotion:', 'vaulthost_current_promo_callback', 'vaulthost_theme_general_options', 'general_options_section');
 	add_settings_field( 'description', 'Description:', 'vaulthost_description_callback', 'vaulthost_theme_general_options', 'general_options_section');
+	add_settings_section( 'services_options', 'Services Options', 'vaulthost_services_options_callback', 'vaulthost_theme_general_options' );
+	add_settings_field( 'webhosting_description', 'Web Hosting Description:', 'vaulthost_webhosting_description_callback', 'vaulthost_theme_general_options', 'services_options');
+	add_settings_field( 'vps_description', 'VPS Description:', 'vaulthost_vps_description_callback', 'vaulthost_theme_general_options', 'services_options');
+	add_settings_field( 'dedicatedservers_description', 'Dedicated Servers Description:', 'vaulthost_dedicatedservers_description_callback', 'vaulthost_theme_general_options', 'services_options');
 	add_settings_section( 'logo_options', 'Logo Options', 'vaulthost_logo_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
 	add_settings_field( 'logo_preview', 'Logo Preview:', 'vaulthost_logo_preview_callback', 'vaulthost_theme_general_options', 'logo_options');
@@ -225,6 +229,50 @@ function replace_thickbox_text($translated_text, $text, $domain) {
 	}
 	return $translated_text;
 }
+
+function vaulthost_services_options_callback() {
+	echo '<p>Enter Descriptions For Service Types Below:</p>';
+}
+
+function vaulthost_webhosting_description_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$webhosting_description = '';
+	if (isset($options['webhosting_description'])) {
+		$webhosting_description = $options['webhosting_description'];
+	}
+
+	echo '<input type="text" id="webhosting_description" name="vaulthost_theme_general_options[webhosting_description]" value="' . $options['webhosting_description'] . '">';
+
+}
+
+function vaulthost_vps_description_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$vps_description = '';
+	if (isset($options['vps_description'])) {
+		$webhosting_description = $options['vps_description'];
+	}
+
+	echo '<input type="text" id="vps_description" name="vaulthost_theme_general_options[vps_description]" value="' . $options['vps_description'] . '">';
+
+}
+
+function vaulthost_dedicatedservers_description_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$dedicatedservers_description = '';
+	if (isset($options['dedicatedservers_description'])) {
+		$webhosting_description = $options['dedicatedservers_description'];
+	}
+
+	echo '<input type="text" id="dedicatedservers_description" name="vaulthost_theme_general_options[dedicatedservers_description]" value="' . $options['dedicatedservers_description'] . '">';
+
+}
+
 
 /* ------------------------------------------------------------------------ * 
  * Contact Options
