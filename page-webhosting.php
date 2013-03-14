@@ -9,6 +9,7 @@
 </div>
 
 
+<!-- Package Pricing Table -->
 <div class="packages">
 	<div class="wrapper">
 		<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
