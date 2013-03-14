@@ -32,13 +32,13 @@
 						<p class="package-price"><?php echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true)); ?></p>
 					</div>
 					<div class="package-details">
-						<div class="pricing-option storage-option"><?php echo intval(get_post_meta( $package->ID, 'package_storage', true)) . 'GB'; ?></div>
-						<div class="pricing-option bandwidth-option"><?php echo intval(get_post_meta( $package->ID, 'package_bandwidth', true)) . 'GB'; ?></div>
-						<div class="pricing-option domains-option"><?php echo intval(get_post_meta( $package->ID, 'package_domains', true)); ?></div>
-						<div class="pricing-option subdomains-option"><?php echo intval(get_post_meta( $package->ID, 'package_subdomains', true)); ?></div>
-						<div class="pricing-option emailaccounts-option"><?php echo intval(get_post_meta( $package->ID, 'package_emailaccounts', true)); ?></div>
-						<div class="pricing-option dbs-option"><?php echo intval(get_post_meta( $package->ID, 'package_dbs', true)); ?></div>
-						<div class="pricing-option ftpaccounts-option"><?php echo intval(get_post_meta( $package->ID, 'package_ftpaccounts', true)); ?></div>
+						<div class="pricing-option storage-option"><?php echo intval(get_post_meta( $post->ID, 'package_storage', true)) . 'GB'; ?></div>
+						<div class="pricing-option bandwidth-option"><?php echo intval(get_post_meta( $post->ID, 'package_bandwidth', true)) . 'GB'; ?></div>
+						<div class="pricing-option domains-option"><?php echo intval(get_post_meta( $post->ID, 'package_domains', true)); ?></div>
+						<div class="pricing-option subdomains-option"><?php echo intval(get_post_meta( $post->ID, 'package_subdomains', true)); ?></div>
+						<div class="pricing-option emailaccounts-option"><?php echo intval(get_post_meta( $post->ID, 'package_emailaccounts', true)); ?></div>
+						<div class="pricing-option dbs-option"><?php echo intval(get_post_meta( $post->ID, 'package_dbs', true)); ?></div>
+						<div class="pricing-option ftpaccounts-option"><?php echo intval(get_post_meta( $post->ID, 'package_ftpaccounts', true)); ?></div>
 					</div>
 				</div>
 			<?php } ?>
