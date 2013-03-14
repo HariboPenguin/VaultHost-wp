@@ -27,7 +27,7 @@
 				<div class="package">
 					<div class="package-header">
 						<h4 class="package-title"><?php echo the_title(); ?></h4>
-						<p class="package-price"><?php echo '£' . floatval(get_post_meta( $post->ID, 'package_price', true)); ?></p>
+						<p class="package-price"><?php echo '£' . number_format(floatval(get_post_meta( $post->ID, 'package_price', true)),2); ?></p>
 					</div>
 					<div class="package-details">
 						<div class="pricing-option ram-option"><?php echo intval(get_post_meta( $post->ID, 'package_ram', true)) . 'MB'; ?></div>
