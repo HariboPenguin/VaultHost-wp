@@ -38,6 +38,7 @@
 						<div class="pricing-option emailaccounts-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_emailaccounts', true)); ?></div>
 						<div class="pricing-option dbs-option"><?php echo intval(get_post_meta( $post->ID, 'package_dbs', true)); ?></div>
 						<div class="pricing-option ftpaccounts-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_ftpaccounts', true)); ?></div>
+						<div class="pricing-option order-option">Order Now</div>
 					</div>
 				</div>
 			<?php } ?>
