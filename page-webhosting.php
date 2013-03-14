@@ -15,13 +15,13 @@
 		<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
 		<?php if ($webhosting_packages->have_posts()) { ?>
 			<div class="option-descriptions">
-				<div class="storage-option-desc"><p>Storage Space:</p></div>
-				<div class="bandwidth-option-desc"><p>Bandwidth:</p></div>
-				<div class="domains-option-desc"><p>Domains:</p></div>
-				<div class="subdomains-option-desc"><p>Subdomains:</p></div>
-				<div class="emailaccounts-option-desc"><p>Email Accounts:</p></div>
-				<div class="dbs-option-desc"><p>MySQL Databases:</p></div>
-				<div class="ftpaccounts-option-desc"><p>FTP Accounts:</p></div>
+				<div class="pricing-option-desc storage-option-desc"><p>Storage Space:</p></div>
+				<div class="pricing-option-desc bandwidth-option-desc"><p>Bandwidth:</p></div>
+				<div class="pricing-option-desc domains-option-desc"><p>Domains:</p></div>
+				<div class="pricing-option-desc subdomains-option-desc"><p>Subdomains:</p></div>
+				<div class="pricing-option-desc emailaccounts-option-desc"><p>Email Accounts:</p></div>
+				<div class="pricing-option-desc dbs-option-desc"><p>MySQL Databases:</p></div>
+				<div class="pricing-option-desc ftpaccounts-option-desc"><p>FTP Accounts:</p></div>
 			</div>
 			<?php while ($webhosting_packages->have_posts()) {
 				$webhosting_packages->the_post(); ?>
