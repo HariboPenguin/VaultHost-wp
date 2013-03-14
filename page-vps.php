@@ -11,8 +11,8 @@
 <!-- Package Pricing Table -->
 <div class="packages">
 	<div class="wrapper">
-		<?php $webhosting_packages = new WP_Query(array('post_type' => 'vps', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
-		<?php if ($vps->have_posts()) { ?>
+		<?php $vps_packages = new WP_Query(array('post_type' => 'vps', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
+		<?php if ($vps_packages->have_posts()) { ?>
 			<div class="option-descriptions">
 				<div class="pricing-option-desc ram-option-desc"><p>RAM:</p></div>
 				<div class="pricing-option-desc cpucores-option-desc"><p>CPU Cores:</p></div>
