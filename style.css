@@ -643,6 +643,11 @@ article {
  * ------------------------------------------------------------------------ */
 .packages {
   text-align: center;
+  margin-bottom: 25px;
+  color: #505050;
+}
+.packages .gray {
+  background: #e1e1e1;
 }
 
 .option-descriptions {
@@ -662,9 +667,10 @@ article {
 }
 
 .pricing-option {
-  height: 35px;
+  padding: 10px 0;
 }
 
 .pricing-option-desc {
-  height: 35px;
+  padding: 10px 0;
+  padding-left: 15px;
 }

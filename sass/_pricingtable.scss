@@ -4,6 +4,11 @@
 
 .packages {
 	text-align: center;
+	.gray {
+		background: lighten($lighttextcolor, 15%);
+	}
+	margin-bottom: 25px;
+	color: $darktextcolor;
 }
 
 .option-descriptions {
@@ -23,9 +28,10 @@
 }
 
 .pricing-option {
-	height: 35px;
+	padding: 10px 0;
 }
 
 .pricing-option-desc {
-	height: 35px;
+	padding: 10px 0;
+	padding-left: 15px;
 }
