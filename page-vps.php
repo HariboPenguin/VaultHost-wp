@@ -37,6 +37,7 @@
 						<div class="pricing-option ipv4-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_ipv4', true)); ?></div>
 						<div class="pricing-option ipv6-option"><?php echo intval(get_post_meta( $post->ID, 'package_ipv6', true)); ?></div>
 						<div class="pricing-option network-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_network', true)) . 'Mbps'; ?></div>
+						<div class="pricing-option order-option">Order Now</div>
 					</div>
 				</div>
 			<?php } ?>
