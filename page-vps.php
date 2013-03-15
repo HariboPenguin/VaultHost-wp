@@ -13,9 +13,18 @@
 	<div class="wrapper">
 		<?php $vps_packages = new WP_Query(array('post_type' => 'vps', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
 		<?php if ($vps_packages->have_posts()) { ?>
+
+			<?php $package_count = wp_count_posts( 'vps'); ?>
+			<?php $package_width_percentage = ((960 / $package_count->publish - 10*2) / 960) * 100; ?>
+
+			<div class="sectionheading">
+				<h3>Our Packages</h3>
+				<p>Get up and running within minutes</p>
+			</div>
+
 			<?php while ($vps_packages->have_posts()) {
 				$vps_packages->the_post(); ?>
-				<div class="package">
+				<div class="package" style="width:<?php echo $package_width_percentage; ?>%">
 					<dl class="package-header">
 						<dd class="package-title"><?php echo the_title(); ?></dd>
 						<dd class="package-price"><?php echo '£' . number_format(floatval(get_post_meta( $post->ID, 'package_price', true)),2); ?></dd>
