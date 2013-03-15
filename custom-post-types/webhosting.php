@@ -269,6 +269,4 @@ function webhosting_custom_columns($column) {
 	}
 }
 
-
-
 ?>
