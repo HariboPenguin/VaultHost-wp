@@ -25,19 +25,26 @@ $package-margin: 10px;
  	font-size: 35px;
  	font-weight: bold;
  	padding: 10px 5px;
+ 	border-left: 1px solid lighten($lighttextcolor, 15%);
+ 	border-right: 1px solid lighten($lighttextcolor, 15%);
  }
 
  .package-option:nth-child(odd) {
  	background: lighten($lighttextcolor, 15%);
  	font-size: 13px;
- 	font-weight: bold;
+ 	// font-weight: bold;
  	padding: 10px 5px;
+ 	color: $darktextcolor;
+
  }
 
  .package-option:nth-child(even) {
- 	font-weight: bold;
+ 	// font-weight: bold;
  	font-size: 13px;
  	padding: 10px 5px;
+ 	color: $darktextcolor;
+ 	border-left: 1px solid lighten($lighttextcolor, 15%);
+ 	border-right: 1px solid lighten($lighttextcolor, 15%);
  }
 
 .package-buy {
@@ -53,7 +60,7 @@ $package-margin: 10px;
 
 
 
- .highlight {
+.highlight {
  	color: #333233;
  	font-size: 15px;
  	font-weight: bold;
