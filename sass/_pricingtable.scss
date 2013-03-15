@@ -8,7 +8,7 @@ $package-margin: 10px;
  .package {
  	width: percentage(($wrapperwidth/$number-of-packages - $package-margin*2)/$wrapperwidth);
  	float: left;
- 	margin: $package-margin;
+ 	margin: percentage($package-margin/$wrapperwidth);
  	text-align: center;
  }
 
