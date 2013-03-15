@@ -15,8 +15,8 @@
 		<?php $dedicatedservers_packages = new WP_Query(array('post_type' => 'dedicatedservers', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
 		<?php if ($dedicatedservers_packages->have_posts()) { ?>
 			<div class="option-descriptions">
-				<div class="pricing-option-desc cpu-option-desc"><p>CPU:</p></div>
-				<div class="pricing-option-desc ram-option-desc gray"><p>RAM:</p></div>
+				<div class="pricing-option-desc cpu-option-desc gray"><p>CPU:</p></div>
+				<div class="pricing-option-desc ram-option-desc"><p>RAM:</p></div>
 				<div class="pricing-option-desc storage-option-desc gray"><p>Storage Space:</p></div>
 				<div class="pricing-option-desc bandwidth-option-desc"><p>Bandwidth:</p></div>
 				<div class="pricing-option-desc ipv4-option-desc gray"><p>IPv4 Addresses:</p></div>
