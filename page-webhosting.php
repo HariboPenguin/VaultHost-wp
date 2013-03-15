@@ -8,43 +8,59 @@
 	<?php endwhile; endif; ?>
 </div>
 
-
 <!-- Package Pricing Table -->
 <div class="packages">
 	<div class="wrapper">
 		<?php $webhosting_packages = new WP_Query(array('post_type' => 'webhosting', 'meta_key' => 'package_price', 'orderby' => 'meta_value_num', 'order' => 'ASC')); ?>
 		<?php if ($webhosting_packages->have_posts()) { ?>
-			<div class="option-descriptions">
-				<div class="pricing-option-desc storage-option-desc gray"><p>Storage Space:</p></div>
-				<div class="pricing-option-desc bandwidth-option-desc"><p>Bandwidth:</p></div>
-				<div class="pricing-option-desc domains-option-desc gray"><p>Domains:</p></div>
-				<div class="pricing-option-desc subdomains-option-desc"><p>Subdomains:</p></div>
-				<div class="pricing-option-desc emailaccounts-option-desc gray"><p>Email Accounts:</p></div>
-				<div class="pricing-option-desc dbs-option-desc"><p>MySQL Databases:</p></div>
-				<div class="pricing-option-desc ftpaccounts-option-desc gray"><p>FTP Accounts:</p></div>
+
+			<?php $package_count = wp_count_posts( 'webhosting'); ?>
+			<?php $package_width_percentage = ((960 / $package_count->publish - 10*2) / 960) * 100; ?>
+
+			<div class="sectionheading">
+				<h3>Our Packages</h3>
+				<p>Get up and running within minutes</p>
 			</div>
+
 			<?php while ($webhosting_packages->have_posts()) {
 				$webhosting_packages->the_post(); ?>
-				<div class="package">
-					<div class="package-header">
-						<h4 class="package-title"><?php echo the_title(); ?></h4>
-						<p class="package-price"><?php echo '£' . number_format(floatval(get_post_meta( $post->ID, 'package_price', true)),2); ?></p>
-					</div>
-					<div class="package-details">
-						<div class="pricing-option storage-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_storage', true)) . 'GB'; ?></div>
-						<div class="pricing-option bandwidth-option"><?php echo intval(get_post_meta( $post->ID, 'package_bandwidth', true)) . 'GB'; ?></div>
-						<div class="pricing-option domains-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_domains', true)); ?></div>
-						<div class="pricing-option subdomains-option"><?php echo intval(get_post_meta( $post->ID, 'package_subdomains', true)); ?></div>
-						<div class="pricing-option emailaccounts-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_emailaccounts', true)); ?></div>
-						<div class="pricing-option dbs-option"><?php echo intval(get_post_meta( $post->ID, 'package_dbs', true)); ?></div>
-						<div class="pricing-option ftpaccounts-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_ftpaccounts', true)); ?></div>
-						<div class="pricing-option order-option">Order Now</div>
-					</div>
+				<div class="package" style="width:<?php echo $package_width_percentage; ?>%">
+					<dl class="package-header">
+						<dd class="package-title"><?php echo the_title(); ?></dd>
+						<dd class="package-price"><?php echo '£' . number_format(floatval(get_post_meta( $post->ID, 'package_price', true)),2); ?></dd>
+					</dl>
+					<dl class="package-options">
+						<dd class="package-option">
+							<div class="storage-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_storage', true)) . 'GB'; ?></span> Storage</div>
+						</dd>
+						<dd class="package-option">
+							<div class="bandwidth-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_bandwidth', true)) . 'GB'; ?></span> Bandwidth</div>
+						</dd>
+						<dd class="package-option">
+							<div class="domains-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_domains', true)); ?></span> Domains</div>
+						</dd>
+						<dd class="package-option">
+							<div class="subdomains-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_subdomains', true)); ?></span> Subdomains</div>
+						</dd>
+						<dd class="package-option">
+							<div class="emailaccounts-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_emailaccounts', true)); ?></span> Email Accounts</div>
+						</dd>
+						<dd class="package-option">
+							<div class="dbs-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_dbs', true)); ?></span> MySQL Databases</div>
+						</dd>
+						<dd class="package-option">
+							<div class="ftpaccounts-option"><span class="highlight"><?php echo intval(get_post_meta( $post->ID, 'package_ftpaccounts', true)); ?></span> FTP Accounts</div>
+						</dd>
+						<dd class="package-buy">
+							<a href="#" class="package-order-button">Order Now</a>
+						</dd>
+					</dl>
 				</div>
 			<?php } ?>
 		<?php } ?>
 	</div>
 </div>
+
 
 
 <?php get_footer(); ?>

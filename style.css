@@ -641,36 +641,66 @@ article {
 /* ------------------------------------------------------------------------ * 
  * Pricing Table Styling
  * ------------------------------------------------------------------------ */
-.packages {
+.package {
+  width: 17.91667%;
+  float: left;
+  margin: 1.04167%;
   text-align: center;
-  margin-bottom: 25px;
+}
+
+.package-title {
+  background: #2d2d2d;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.package-price {
+  color: #333233;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 10px 5px;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+}
+
+.package-option:nth-child(odd) {
+  background: #e1e1e1;
+  font-size: 13px;
+  padding: 10px 5px;
   color: #505050;
 }
-.packages .gray {
-  background: #e1e1e1;
+
+.package-option:nth-child(even) {
+  font-size: 13px;
+  padding: 10px 5px;
+  color: #505050;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
 }
 
-.option-descriptions {
-  float: left;
-  margin-top: 75px;
-  width: 170px;
-  text-align: left;
+.package-buy {
+  background: #2d2d2d;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  padding: 20px;
 }
 
-.package {
-  float: left;
-  width: 150px;
+.package-order-button {
+  color: #f2f2f2;
 }
 
-.package-header {
-  height: 75px;
-}
-
-.pricing-option {
-  padding: 10px 0;
-}
-
-.pricing-option-desc {
-  padding: 10px 0;
-  padding-left: 15px;
+.highlight {
+  color: #333233;
+  font-size: 15px;
+  font-weight: bold;
 }
