@@ -637,3 +637,65 @@ article {
   border-radius: 20px;
   padding: 10px;
 }
+
+/* ------------------------------------------------------------------------ * 
+ * Pricing Table Styling
+ * ------------------------------------------------------------------------ */
+.package {
+  width: 17.91667%;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+
+.package-title {
+  background: #2d2d2d;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.package-price {
+  font-size: 35px;
+  font-weight: bold;
+  padding: 10px 5px;
+}
+
+.package-option:nth-child(odd) {
+  background: #e1e1e1;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px 5px;
+}
+
+.package-option:nth-child(even) {
+  font-weight: bold;
+  font-size: 13px;
+  padding: 10px 5px;
+}
+
+.package-buy {
+  background: #2d2d2d;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  padding: 20px;
+}
+
+.package-order-button {
+  color: #f2f2f2;
+}
+
+.highlight {
+  color: #333233;
+  font-size: 15px;
+  font-weight: bold;
+}

@@ -1,0 +1,60 @@
+/* ------------------------------------------------------------------------ * 
+ * Pricing Table Styling
+ * ------------------------------------------------------------------------ */
+ 
+$number-of-packages: 5;
+$package-margin: 10px;
+
+ .package {
+ 	width: percentage(($wrapperwidth/$number-of-packages - $package-margin*2)/$wrapperwidth);
+ 	float: left;
+ 	margin: $package-margin;
+ 	text-align: center;
+ }
+
+ .package-title {
+ 	background: #2d2d2d;
+ 	@include border-radius(3px 3px 0 0);
+ 	color: #ffffff;
+ 	font-size: 20px;
+ 	font-weight: bold;
+ 	padding: 20px;
+ }
+
+ .package-price {
+ 	font-size: 35px;
+ 	font-weight: bold;
+ 	padding: 10px 5px;
+ }
+
+ .package-option:nth-child(odd) {
+ 	background: lighten($lighttextcolor, 15%);
+ 	font-size: 13px;
+ 	font-weight: bold;
+ 	padding: 10px 5px;
+ }
+
+ .package-option:nth-child(even) {
+ 	font-weight: bold;
+ 	font-size: 13px;
+ 	padding: 10px 5px;
+ }
+
+.package-buy {
+	background: #2d2d2d;
+	@include border-radius(0 0 3px 3px);
+	padding: 20px;
+}
+
+.package-order-button {
+	color: #f2f2f2;
+}
+
+
+
+
+ .highlight {
+ 	color: #333233;
+ 	font-size: 15px;
+ 	font-weight: bold;
+ }
