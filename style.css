@@ -662,6 +662,7 @@ article {
 }
 
 .package-price {
+  color: #333233;
   font-size: 35px;
   font-weight: bold;
   padding: 10px 5px;
