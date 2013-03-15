@@ -31,8 +31,8 @@
 						<p class="package-price"><?php echo '£' . number_format(floatval(get_post_meta( $post->ID, 'package_price', true)),2); ?></p>
 					</div>
 					<div class="package-details">
-						<div class="pricing-option cpu-option"><?php echo esc_html(get_post_meta( $post->ID, 'package_cpu', true)); ?></div>
-						<div class="pricing-option ram-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_ram', true)) . 'MB'; ?></div>
+						<div class="pricing-option cpu-option gray"><?php echo esc_html(get_post_meta( $post->ID, 'package_cpu', true)); ?></div>
+						<div class="pricing-option ram-option"><?php echo intval(get_post_meta( $post->ID, 'package_ram', true)) . 'MB'; ?></div>
 						<div class="pricing-option storage-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_storage', true)) . 'GB'; ?></div>
 						<div class="pricing-option bandwidth-option"><?php echo intval(get_post_meta( $post->ID, 'package_bandwidth', true)) . 'GB'; ?></div>
 						<div class="pricing-option ipv4-option gray"><?php echo intval(get_post_meta( $post->ID, 'package_ipv4', true)); ?></div>
