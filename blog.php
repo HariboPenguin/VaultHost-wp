@@ -16,13 +16,23 @@
 		<p class="year"><?php echo get_the_date('Y'); ?></p>
 	</div>
 	<article>
-		<h2><a href="<?php the_permalink(); ?>" title=""><?php the_title(); ?></a></h2>
-		<p class="posttime"><?php the_time(); ?></p>
-		<p><?php the_excerpt(__('(more...)')); ?></p>
-		<p><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></p>
+		<div class="articleheader">
+			<h2 class="posttitle"><a href="<?php the_permalink(); ?>" title=""><?php the_title(); ?></a></h2>
+			<p class="posttime"><?php the_time('jS M Y, G:i'); ?></p>
+			<div style="clear:both"></div>
+		</div>
+		<div style="clear:both"></div>
+		<div class="articlecontent">
+			<p><?php the_excerpt(__('(more...)')); ?></p>
+		</div>
+		<div class="articlemeta">
+			<p><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></p>
+		</div>
 	</article>
 	<div style="clear:both;"></div>
 	<?php endwhile; ?>
 </div>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

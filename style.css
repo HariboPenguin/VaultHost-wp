@@ -598,6 +598,7 @@ footer a:hover {
   width: 60px;
   text-align: center;
   margin-top: 10px;
+  display: none;
 }
 .postdate .day, .postdate .year {
   background: black;
@@ -626,9 +627,7 @@ footer a:hover {
 }
 
 article {
-  background: #bbbbbb;
   float: left;
-  margin-left: -68px;
   margin-bottom: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -636,6 +635,36 @@ article {
   -o-border-radius: 20px;
   border-radius: 20px;
   padding: 10px;
+  width: 600px;
+}
+
+.articleheader {
+  border-bottom: 3px solid #a2a2a2;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+.posttitle {
+  float: left;
+}
+.posttitle a {
+  color: #6a6a6a;
+}
+.posttitle a:hover {
+  color: blue;
+}
+
+.posttime {
+  float: right;
+  margin-top: 6px;
+  color: #505050;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.articlecontent {
+  margin-bottom: 5px;
 }
 
 /* ------------------------------------------------------------------------ * 
