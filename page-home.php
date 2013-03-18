@@ -34,7 +34,7 @@
 					<?php $counter++; ?>
 					<?php } ?>
 				</p>
-				<a class="serviceboxmorebutton" href="http://vaulthost.d-tomlinson.co.uk/web-hosting/">Learn More</a>
+				<a class="serviceboxmorebutton" href="<?php echo $options['webhosting_more_info_link']; ?>">Learn More</a>
 				<div style="clear: both;"></div>
 			</div>
 			<?php } ?>
@@ -55,7 +55,7 @@
 					<?php $counter++; ?>
 					<?php } ?>
 				</p>
-				<a class="serviceboxmorebutton" href="http://vaulthost.d-tomlinson.co.uk/vps-packages/">Learn More</a>
+				<a class="serviceboxmorebutton" href="<?php echo $options['vps_more_info_link']; ?>">Learn More</a>
 				<div style="clear: both;"></div>
 			</div>
 			<?php } ?>
@@ -76,7 +76,7 @@
 					<?php $counter++; ?>
 					<?php } ?>
 				</p>
-				<a class="serviceboxmorebutton" href="http://vaulthost.d-tomlinson.co.uk/dedicated-servers/">Learn More</a>
+				<a class="serviceboxmorebutton" href="<?php echo $options['dedicatedservers_more_info_link']; ?>">Learn More</a>
 				<div style="clear: both;"></div>
 			</div>
 			<?php } ?>

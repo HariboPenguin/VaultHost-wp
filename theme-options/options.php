@@ -128,8 +128,11 @@ function vaulthost_init_general_options() {
 	add_settings_field( 'description', 'Description:', 'vaulthost_description_callback', 'vaulthost_theme_general_options', 'general_options_section');
 	add_settings_section( 'services_options', 'Services Options', 'vaulthost_services_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'webhosting_description', 'Web Hosting Description:', 'vaulthost_webhosting_description_callback', 'vaulthost_theme_general_options', 'services_options');
+	add_settings_field( 'webhosting_more_info_link', 'Web Hosting More Info Link:', 'vaulthost_webhosting_more_info_link_callback', 'vaulthost_theme_general_options', 'services_options');
 	add_settings_field( 'vps_description', 'VPS Description:', 'vaulthost_vps_description_callback', 'vaulthost_theme_general_options', 'services_options');
+	add_settings_field( 'vps_more_info_link', 'VPS More Info Link:', 'vaulthost_vps_more_info_link_callback', 'vaulthost_theme_general_options', 'services_options');
 	add_settings_field( 'dedicatedservers_description', 'Dedicated Servers Description:', 'vaulthost_dedicatedservers_description_callback', 'vaulthost_theme_general_options', 'services_options');
+	add_settings_field( 'dedicatedservers_more_info_link', 'Dedicated Servers More Info Link:', 'vaulthost_dedicatedservers_more_info_link_callback', 'vaulthost_theme_general_options', 'services_options');
 	add_settings_section( 'logo_options', 'Logo Options', 'vaulthost_logo_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
 	add_settings_field( 'logo_preview', 'Logo Preview:', 'vaulthost_logo_preview_callback', 'vaulthost_theme_general_options', 'logo_options');
@@ -247,16 +250,42 @@ function vaulthost_webhosting_description_callback() {
 
 }
 
+function vaulthost_webhosting_more_info_link_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$webhosting_more_info_link = '';
+	if (isset($options['webhosting_more_info_link'])) {
+		$webhosting_more_info_link = $options['webhosting_more_info_link'];
+	}
+
+	echo '<input type="text" id="webhosting_more_info_link" name="vaulthost_theme_general_options[webhosting_more_info_link]" value="' . $options['webhosting_more_info_link'] . '">';
+
+}
+
 function vaulthost_vps_description_callback() {
 
 	$options = get_option('vaulthost_theme_general_options');
 
 	$vps_description = '';
 	if (isset($options['vps_description'])) {
-		$webhosting_description = $options['vps_description'];
+		$vps_description = $options['vps_description'];
 	}
 
 	echo '<input type="text" id="vps_description" name="vaulthost_theme_general_options[vps_description]" value="' . $options['vps_description'] . '">';
+
+}
+
+function vaulthost_vps_more_info_link_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$vps_more_info_link = '';
+	if (isset($options['vps_more_info_link'])) {
+		$vps_more_info_link = $options['vps_more_info_link'];
+	}
+
+	echo '<input type="text" id="vps_more_info_link" name="vaulthost_theme_general_options[vps_more_info_link]" value="' . $options['vps_more_info_link'] . '">';
 
 }
 
@@ -266,10 +295,23 @@ function vaulthost_dedicatedservers_description_callback() {
 
 	$dedicatedservers_description = '';
 	if (isset($options['dedicatedservers_description'])) {
-		$webhosting_description = $options['dedicatedservers_description'];
+		$dedicatedservers_description = $options['dedicatedservers_description'];
 	}
 
 	echo '<input type="text" id="dedicatedservers_description" name="vaulthost_theme_general_options[dedicatedservers_description]" value="' . $options['dedicatedservers_description'] . '">';
+
+}
+
+function vaulthost_dedicatedservers_more_info_link_callback() {
+
+	$options = get_option('vaulthost_theme_general_options');
+
+	$dedicatedservers_more_info_link = '';
+	if (isset($options['dedicatedservers_more_info_link'])) {
+		$dedicatedservers_more_info_link = $options['dedicatedservers_more_info_link'];
+	}
+
+	echo '<input type="text" id="dedicatedservers_more_info_link" name="vaulthost_theme_general_options[dedicatedservers_more_info_link]" value="' . $options['dedicatedservers_more_info_link'] . '">';
 
 }
 
