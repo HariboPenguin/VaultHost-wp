@@ -45,3 +45,36 @@ footer {
 .footerbox p {
 	font-size: 13px;
 }
+
+#footerboxcontactinfo {
+
+	h6{
+		margin-bottom: 10px;
+	}
+
+	i {
+		color: #5b5b5b;
+		float: left;
+		font-size: 35px;
+		margin-right: 15px;
+		text-align: center;
+		width: 40px;
+	}
+
+	a {
+		color: $lighttextcolor;
+		&:hover {
+			color: $lighttexthighlightcolor;
+			text-decoration: none;
+		}
+	}
+}
+
+.contactoption {
+	margin-top: 12px;
+	overflow: hidden;
+}
+
+.contact-center {
+	margin-top: 9px;
+}

@@ -565,6 +565,34 @@ footer a:hover {
   font-size: 13px;
 }
 
+#footerboxcontactinfo h6 {
+  margin-bottom: 10px;
+}
+#footerboxcontactinfo i {
+  color: #5b5b5b;
+  float: left;
+  font-size: 35px;
+  margin-right: 15px;
+  text-align: center;
+  width: 40px;
+}
+#footerboxcontactinfo a {
+  color: #bbbbbb;
+}
+#footerboxcontactinfo a:hover {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.contactoption {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.contact-center {
+  margin-top: 9px;
+}
+
 #bottombar {
   padding: 15px;
   background: #191919;

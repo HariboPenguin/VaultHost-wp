@@ -37,15 +37,36 @@
 			<div id="footerboxcontactinfo" class="footerbox">
 				<h6>Contact Info</h6>
 				<?php $contact_options = get_option('vaulthost_theme_contact_options'); ?>
-				<?php echo $contact_options['address'] ? '<p id="address">' . $contact_options['address'] . '</p>' : ''; ?>
-				<?php echo $contact_options['phone'] ? '<p id="phone">' . $contact_options['phone'] . '</p>' : ''; ?>
-				<?php echo $contact_options['mobile'] ? '<p id="mobile">' . $contact_options['mobile'] . '</p>' : ''; ?>
-				<?php echo $contact_options['email'] ? '<p id="email">' . $contact_options['email'] . '</p>' : ''; ?>
+				<div class="contactoption">
+					<?php echo $contact_options['address'] ? '<i class="icon-map-marker"></i><p id="address">' . $contact_options['address'] . '</p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
+				<div class="contactoption">
+					<?php echo $contact_options['phone'] ? '<i class="icon-phone"></i><p id="phone"><a href="tel:' . $contact_options['phone'] . '">' . $contact_options['phone'] . '</a></p>' : ''; ?>
+					<?php echo $contact_options['mobile'] ? '<p id="mobile"><a href="tel:' . $contact_options['mobile'] . '">' . $contact_options['mobile'] . '</a></p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
+				<div class="contactoption">
+					<?php echo $contact_options['email'] ? '<i class="icon-envelope-alt"></i><p id="email" class="contact-center"><a href="mailto:' . $contact_options['email'] . '">' . $contact_options['email'] . '</a></p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
+				<div class="contactoption">
 				<?php $social_options = get_option('vaulthost_theme_social_options'); ?>
-				<?php echo $social_options['facebook'] ? '<a href="https://www.facebook.com/' . $social_options['facebook'] . '">Facebook</a>' : ''; ?>
-				<?php echo $social_options['twitter'] ? '<a href="https://twitter.com/' . $social_options['twitter'] . '">Twitter</a>' : ''; ?>
-				<?php echo $social_options['googleplus'] ? '<a href="https://plus.google.com/' . $social_options['googleplus'] . '">Google+</a>' : ''; ?>
-				<?php echo $social_options['youtube'] ? '<a href="https://www.youtube.com/' . $social_options['youtube'] . '">YouTube</a>' : ''; ?>
+					<?php echo $social_options['facebook'] ? '<i class="icon-facebook"></i><p class="contact-center"><a href="https://www.facebook.com/' . $social_options['facebook'] . '">/' . $social_options['facebook'] . '</a></p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
+				<div class="contactoption">
+					<?php echo $social_options['twitter'] ? '<i class="icon-twitter"></i><p class="contact-center"><a href="https://twitter.com/' . $social_options['twitter'] . '">@' . $social_options['twitter'] . '</a></p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
+				<div class="contactoption">
+					<?php echo $social_options['googleplus'] ? '<i class="icon-google-plus"></i><p class="contact-center"><a href="https://plus.google.com/' . $social_options['googleplus'] . '">Google+</a></p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
+				<div class="contactoption">
+					<?php echo $social_options['youtube'] ? '<p class="contact-center"><a href="https://www.youtube.com/' . $social_options['youtube'] . '">YouTube</a></p>' : ''; ?>
+				</div>
+				<div style="clear:both"></div>
 			</div>
 		</div>
 	</footer>

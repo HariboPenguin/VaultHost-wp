@@ -19,7 +19,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 	<!-- css -->
 	<!-- <link rel="stylesheet" href="css/reset.css"> -->
-	<!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/font-awesome.css">
 	<!-- <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" /> -->
 	<!-- <link rel="stylesheet" href="slider-themes/bar/bar.css"> -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
