@@ -1,0 +1,70 @@
+// Testimonial Page Styling
+
+$shadow_radius: 6px;
+$nose_size: 12px;
+$shadow: 0 1px $shadow_radius #B2B2B2;
+$border: 1px solid #bbb;
+
+.testimonial_bubble {
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    border: $border;
+    box-shadow: $shadow;
+    // display: inline-block;
+    padding: 10px 18px;
+    margin-left: ($shadow_radius + $nose_size);
+    margin-right: ($shadow_radius + $nose_size);
+    position: relative;
+    vertical-align: top;
+    width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial_bubble_left {
+	float: left;
+}
+
+.testimonial_bubble_right {
+	float: right;
+}
+
+.tail {
+    position: absolute;
+    bottom: $nose_size;
+    right: -($shadow_radius + $nose_size);
+    height: ($shadow_radius + $nose_size);
+    width: ($shadow_radius + $nose_size);
+    overflow: hidden;
+}
+.tail:before {
+    border: $border;
+    background-color: #F2F2F2;
+    box-shadow: $shadow;
+    content: "\00a0";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: $nose_size;
+    height: $nose_size;
+    width: $nose_size;
+    @include skew(45deg);
+}
+
+.testimonial_bubble_tail_left {
+	left: -($shadow_radius + $nose_size);
+}
+
+.testimonial_bubble_tail_right {
+	right: -($shadow_radius + $nose_size);
+}
+
+.testimonial_bubble_tail_left:before {
+	left: $nose_size;
+	@include skew(-45deg);
+}
+
+.testimonial_bubble_tail_right:before {
+	right: $nose_size;
+	@include skew(45deg);
+}
