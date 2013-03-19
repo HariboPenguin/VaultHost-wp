@@ -136,6 +136,8 @@ function vaulthost_init_general_options() {
 	add_settings_section( 'logo_options', 'Logo Options', 'vaulthost_logo_options_callback', 'vaulthost_theme_general_options' );
 	add_settings_field( 'logo', 'Logo:', 'vaulthost_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
 	add_settings_field( 'logo_preview', 'Logo Preview:', 'vaulthost_logo_preview_callback', 'vaulthost_theme_general_options', 'logo_options');
+	add_settings_field( 'footer_logo', 'Footer Logo:', 'vaulthost_footer_logo_callback', 'vaulthost_theme_general_options', 'logo_options');
+	add_settings_field( 'footer_logo_preview', 'Footer Logo Preview:', 'vaulthost_footer_logo_preview_callback', 'vaulthost_theme_general_options', 'logo_options');
 	register_setting( 'vaulthost_theme_general_options', 'vaulthost_theme_general_options' );
 
 }
@@ -194,6 +196,28 @@ function vaulthost_logo_preview_callback() {
 
 	<div id="upload_logo_preview" style="min-height: 100px;">
 		<img style="max-width:100%;" src="<?php echo esc_url($options['logourl']); ?>" />
+	</div>
+
+<?php
+}
+
+function vaulthost_footer_logo_callback() {
+
+	$options = get_option('vaulthost_theme_general_options'); ?>
+
+	<input type="text" id="footer_logo_url" name="vaulthost_theme_general_options[footer_logourl]" value="<?php echo esc_url($options['footer_logourl']); ?>" />
+	<input id="upload_logo_button" type="button" class="button" value="<?php _e('Upload Footer Logo', 'vaulthost'); ?>" />
+	<span class="description"><?php _e('Upload an image for the footer logo.', 'vaulthost'); ?></span>
+
+	<?php
+}
+
+function vaulthost_footer_logo_preview_callback() {
+
+	$options = get_option('vaulthost_theme_general_options'); ?>
+
+	<div id="upload_footer_logo_preview" style="min-height: 100px;">
+		<img style="max-width:100%;" src="<?php echo esc_url($options['footer_logourl']); ?>" />
 	</div>
 
 <?php
