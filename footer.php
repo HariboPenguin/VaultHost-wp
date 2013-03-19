@@ -16,6 +16,7 @@
 			<div id="footerboxabout" class="footerbox">
 				<h6>About Us</h6>
 				<?php $general_options = get_option('vaulthost_theme_general_options'); ?>
+				<?php echo $general_options['footer_logourl'] ? '<img id="footer_about_logo" src="' . $general_options['footer_logourl'] . '">' : ''; ?>
 				<p id="aboutdescription"><?php echo $general_options['description'];?></p>
 			</div>
 			<div id="footerboxnews" class="footerbox">

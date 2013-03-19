@@ -206,7 +206,7 @@ function vaulthost_footer_logo_callback() {
 	$options = get_option('vaulthost_theme_general_options'); ?>
 
 	<input type="text" id="footer_logo_url" name="vaulthost_theme_general_options[footer_logourl]" value="<?php echo esc_url($options['footer_logourl']); ?>" />
-	<input id="upload_logo_button" type="button" class="button" value="<?php _e('Upload Footer Logo', 'vaulthost'); ?>" />
+	<input id="upload_footer_logo_button" type="button" class="button" value="<?php _e('Upload Footer Logo', 'vaulthost'); ?>" />
 	<span class="description"><?php _e('Upload an image for the footer logo.', 'vaulthost'); ?></span>
 
 	<?php
