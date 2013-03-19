@@ -61,3 +61,8 @@ include 'custom-post-types/dedicatedservers.php';
  * Features Custom Post Stuff
  * ------------------------------------------------------------------------ */
 include 'custom-post-types/features.php';
+
+/* ------------------------------------------------------------------------ * 
+ * Testimonials Custom Post Type
+ * ------------------------------------------------------------------------ */
+include 'custom-post-types/testimonials.php';
