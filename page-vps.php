@@ -3,9 +3,22 @@
 <?php get_header(); ?>
 
 <div class="wrapper">
-	<?php if (have_posts()) : while (have_posts()) : the_post();?>
-	<?php the_content(); ?>
-	<?php endwhile; endif; ?>
+	<div class="servicecontent">
+		<?php if (have_posts()) : while (have_posts()) : the_post();?>
+		<?php the_content(); ?>
+		<?php endwhile; endif; ?>
+	</div>
+	<div class="servicefeaturesbox">
+		<h3>Features</h3>
+		<ul>
+			<li class="servicefeature"><i class="icon-ok"></i>24/7 Technical Support</li>
+			<li class="servicefeature"><i class="icon-ok"></i>Daily Backups</li>
+			<li class="servicefeature"><i class="icon-ok"></i>Hosting Control Panel</li>
+			<li class="servicefeature"><i class="icon-ok"></i>99.99% Guaranteed Uptime</li>
+			<li class="servicefeature"><i class="icon-ok"></i>Instant Provisioning</li>
+			<li class="servicefeature"><i class="icon-ok"></i>256-Bit SSL Security</li>
+		</ul>
+	</div>
 </div>
 
 <!-- Package Pricing Table -->
