@@ -366,6 +366,12 @@ nav ul li a:hover {
   max-height: 400px;
 }
 
+.banner-image {
+  border: 8px solid white;
+  box-shadow: 0px 0px 20px gray;
+  margin: 10px;
+}
+
 .sectionheading {
   text-align: center;
   color: #505050;
@@ -884,6 +890,8 @@ article {
 
 .servicecontent {
   float: left;
+  margin-top: 10px;
+  color: #505050;
 }
 
 .servicefeaturesbox {
