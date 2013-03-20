@@ -933,6 +933,10 @@ article {
   text-shadow: 1px 1px 2px gray;
 }
 
+#supportpagecontent {
+  float: left;
+}
+
 #supportcontactform {
   float: right;
   width: 400px;

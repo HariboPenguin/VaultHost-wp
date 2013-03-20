@@ -3,14 +3,14 @@
 <?php get_header(); ?>
 
 <div class="wrapper">
-	<div id="supportpagecontent">
 	<h1><?php the_title(); ?></h1>
+	<div id="supportpagecontent">
 		<?php if (have_posts()) : while (have_posts()) : the_post();?>
 		<?php the_content(); ?>
 		<?php endwhile; endif; ?>
 	</div>
 	<div id="supportcontactform">
-		<?php echo do_shortcode( '[contact-form-7 id="148" title="Contact form 1"]' );?>
+		<?php echo do_shortcode( '[contact-form-7 id="81" title="Contact Form"]' );?>
 	</div>
 </div>
 
