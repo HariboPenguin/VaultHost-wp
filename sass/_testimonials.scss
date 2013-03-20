@@ -68,3 +68,18 @@ $border: 1px solid #bbb;
 	right: $nose_size;
 	@include skew(45deg);
 }
+
+.testimonial_customer_details {
+    float: left;
+    position: absolute;
+    bottom: 5px;
+    right: -235px;
+}
+
+.testimonial_customer_details_left {
+    left: -240px;
+}
+
+.testimonial_customer_details_right {
+    right: -235px;
+}

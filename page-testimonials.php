@@ -19,6 +19,7 @@
 					<span class='tail <?php echo $side = ($count % 2 == 0) ? 'testimonial_bubble_tail_right' : 'testimonial_bubble_tail_left' ?>'>&nbsp;</span>
 					<p class="testimonialtitle"><?php the_title(); ?></p>
 					<p class="testimonialdescription"><?php the_content(); ?></p>
+					<p class="testimonial_customer_details <?php echo $side = ($count % 2 == 0) ? 'testimonial_customer_details_right' : 'testimonial_customer_details_left' ?>"><?php echo esc_html(get_post_meta( $post->ID, 'testimonial_person_name', true)) . ', ' . esc_html(get_post_meta($post->ID, 'testimonial_company_position', true)) . ', ' . esc_html(get_post_meta($post->ID, 'testimonial_company_name', true)); ?></p>
 				</div>
 				<div style="clear:both;"></div>
 				<?php $count++; ?>

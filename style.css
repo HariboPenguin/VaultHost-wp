@@ -847,3 +847,18 @@ article {
   -o-transform: skew(45deg, 5deg);
   transform: skew(45deg, 5deg);
 }
+
+.testimonial_customer_details {
+  float: left;
+  position: absolute;
+  bottom: 5px;
+  right: -235px;
+}
+
+.testimonial_customer_details_left {
+  left: -240px;
+}
+
+.testimonial_customer_details_right {
+  right: -235px;
+}
