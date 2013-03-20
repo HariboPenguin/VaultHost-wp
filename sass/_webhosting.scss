@@ -12,6 +12,9 @@
 	@include box-shadow(0px 0px 10px gray);
 	margin: 10px;
 	margin-bottom: 20px;
+	background-color: rgb(255,255,255); // Old browsers
+	@include filter-gradient(#ffffff, #ededed, vertical); // IE6-9
+	@include background-image(linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%));
 
 	h3 {
 		margin: 5px 0;
