@@ -23,10 +23,14 @@ $border: 1px solid #bbb;
 
 .testimonial_bubble_left {
 	float: left;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(191,210,85,1)), color-stop(50%,rgba(142,185,42,1)), color-stop(51%,rgba(114,170,0,1)), color-stop(100%,rgba(158,203,45,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .testimonial_bubble_right {
 	float: right;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(183,222,237,1)), color-stop(50%,rgba(113,206,239,1)), color-stop(51%,rgba(33,180,226,1)), color-stop(100%,rgba(183,222,237,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .tail {
@@ -62,11 +66,15 @@ $border: 1px solid #bbb;
 .testimonial_bubble_tail_left:before {
 	left: $nose_size;
 	@include skew(-45deg);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,185,232,1)), color-stop(100%,rgba(119,203,236,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(59,185,232,1) 0%,rgba(119,203,236,1) 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .testimonial_bubble_tail_right:before {
 	right: $nose_size;
 	@include skew(45deg);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(124,178,0,1)), color-stop(100%,rgba(140,190,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(124,178,0,1) 0%,rgba(140,190,0,1) 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .testimonial_customer_details {

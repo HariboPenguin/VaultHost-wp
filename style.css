@@ -789,10 +789,18 @@ article {
 
 .testimonial_bubble_left {
   float: left;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bfd255), color-stop(50%, #8eb92a), color-stop(51%, #72aa00), color-stop(100%, #9ecb2d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+  /* Chrome10+,Safari5.1+ */
 }
 
 .testimonial_bubble_right {
   float: right;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b7deed), color-stop(50%, #71ceef), color-stop(51%, #21b4e2), color-stop(100%, #b7deed));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #b7deed 0%, #71ceef 50%, #21b4e2 51%, #b7deed 100%);
+  /* Chrome10+,Safari5.1+ */
 }
 
 .tail {
@@ -837,6 +845,10 @@ article {
   -ms-transform: skew(-45deg, 5deg);
   -o-transform: skew(-45deg, 5deg);
   transform: skew(-45deg, 5deg);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3bb9e8), color-stop(100%, #77cbec));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #3bb9e8 0%, #77cbec 100%);
+  /* Chrome10+,Safari5.1+ */
 }
 
 .testimonial_bubble_tail_right:before {
@@ -846,6 +858,10 @@ article {
   -ms-transform: skew(45deg, 5deg);
   -o-transform: skew(45deg, 5deg);
   transform: skew(45deg, 5deg);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7cb200), color-stop(100%, #8cbe00));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #7cb200 0%, #8cbe00 100%);
+  /* Chrome10+,Safari5.1+ */
 }
 
 .testimonial_customer_details {
