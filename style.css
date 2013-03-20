@@ -933,6 +933,6 @@ article {
   text-shadow: 1px 1px 2px gray;
 }
 
-#support_contact_field {
+.support_contact_field {
   font-size: 20px;
 }
