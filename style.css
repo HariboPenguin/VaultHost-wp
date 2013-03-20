@@ -932,3 +932,7 @@ article {
   color: #009a00;
   text-shadow: 1px 1px 2px gray;
 }
+
+#support_contact_field input {
+  font-size: 20px;
+}
