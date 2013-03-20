@@ -479,6 +479,16 @@ nav ul li a:hover {
   top: 1px;
 }
 
+.servicecontentcontainer {
+  float: left;
+  color: #505050;
+}
+
+.servicecontent {
+  margin-top: 10px;
+  width: 680px;
+}
+
 #features {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -886,16 +896,6 @@ article {
   left: 555px;
   width: 400px;
   text-align: left;
-}
-
-.servicecontentcontainer {
-  float: left;
-  color: #505050;
-}
-
-.servicecontent {
-  margin-top: 10px;
-  width: 680px;
 }
 
 .servicefeaturesbox {
