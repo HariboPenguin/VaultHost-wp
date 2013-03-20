@@ -70,18 +70,20 @@ $border: 1px solid #bbb;
 }
 
 .testimonial_customer_details {
-    float: left;
+    // float: left;
     position: absolute;
     bottom: 5px;
     right: -235px;
 }
 
 .testimonial_customer_details_left {
-    right: 410px;
+    right: 555px;
     width: 400px;
+    text-align: right;
 }
 
 .testimonial_customer_details_right {
     left: 555px;
     width: 400px;
+    text-align: left;
 }

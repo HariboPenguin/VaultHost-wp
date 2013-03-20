@@ -849,18 +849,62 @@ article {
 }
 
 .testimonial_customer_details {
-  float: left;
   position: absolute;
   bottom: 5px;
   right: -235px;
 }
 
 .testimonial_customer_details_left {
-  right: 410px;
+  right: 555px;
   width: 400px;
+  text-align: right;
 }
 
 .testimonial_customer_details_right {
   left: 555px;
   width: 400px;
+  text-align: left;
+}
+
+.servicecontent {
+  float: left;
+}
+
+.servicefeaturesbox {
+  width: 240px;
+  float: right;
+  text-align: center;
+  color: #767676;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 0px 10px gray;
+  -moz-box-shadow: 0px 0px 10px gray;
+  box-shadow: 0px 0px 10px gray;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+.servicefeaturesbox h3 {
+  margin: 5px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #bbbbbb;
+}
+.servicefeaturesbox ul {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.servicefeaturesbox ul li {
+  margin: 4px 0;
+  font-size: 13px;
+  font-style: italic;
+  color: #767676;
+}
+.servicefeaturesbox ul li i {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #009a00;
+  text-shadow: 1px 1px 2px gray;
 }
