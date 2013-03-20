@@ -13,7 +13,7 @@
 		<ul>
 			<li class="servicefeature"><i class="icon-ok"></i>24/7 Technical Support</li>
 			<li class="servicefeature"><i class="icon-ok"></i>Daily Backups</li>
-			<li class="servicefeature"><i class="icon-ok"></i>Hosting Control Panel</li>
+			<li class="servicefeature"><i class="icon-ok"></i>Enterprise-Grade Hardware</li>
 			<li class="servicefeature"><i class="icon-ok"></i>99.99% Guaranteed Uptime</li>
 			<li class="servicefeature"><i class="icon-ok"></i>Instant Provisioning</li>
 			<li class="servicefeature"><i class="icon-ok"></i>256-Bit SSL Security</li>
