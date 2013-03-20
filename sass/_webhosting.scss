@@ -1,7 +1,16 @@
-.servicecontent {
+.servicecontentcontainer {
 	float: left;
-	margin-top: 10px;
+	// margin-top: 10px;
 	color: $darktextcolor;
+
+	h1 {
+		// font-weight: bold;
+	}
+}
+
+.servicecontent {
+	margin-top: 10px;
+	width: 680px;
 }
 
 .servicefeaturesbox {

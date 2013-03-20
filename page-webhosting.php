@@ -3,11 +3,13 @@
 <?php get_header(); ?>
 
 <div class="wrapper">
-	<h1 class="pagetitle"><?php the_title(); ?></h1>
-	<div class="servicecontent">
-		<?php if (have_posts()) : while (have_posts()) : the_post();?>
-		<?php the_content(); ?>
-		<?php endwhile; endif; ?>
+	<div class="servicecontentcontainer">
+		<h1 class="pagetitle"><?php the_title(); ?></h1>
+		<div class="servicecontent">
+			<?php if (have_posts()) : while (have_posts()) : the_post();?>
+			<?php the_content(); ?>
+			<?php endwhile; endif; ?>
+		</div>
 	</div>
 	<div class="servicefeaturesbox">
 		<h3>Features</h3>

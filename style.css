@@ -888,10 +888,14 @@ article {
   text-align: left;
 }
 
-.servicecontent {
+.servicecontentcontainer {
   float: left;
-  margin-top: 10px;
   color: #505050;
+}
+
+.servicecontent {
+  margin-top: 10px;
+  width: 680px;
 }
 
 .servicefeaturesbox {
