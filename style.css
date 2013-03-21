@@ -947,6 +947,7 @@ article {
 
 #supportpagecontent {
   float: left;
+  width: 500px;
 }
 
 #supportcontactform {
