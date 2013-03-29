@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays all of the <head> section, top-bar and page <header>
  *
  * @package WordPress
  * @subpackage VaultHost 
@@ -20,23 +20,23 @@
 	<!-- css -->
 	<!-- <link rel="stylesheet" href="css/reset.css"> -->
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/font-awesome.css">
-	<!-- <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" /> -->
-	<!-- <link rel="stylesheet" href="slider-themes/bar/bar.css"> -->
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory') ?>/css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory') ?>/slider-themes/bar/bar.css">
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<!-- end css -->
 
 	<!--[if lt IE 9]>
-		<script src="js/html5shiv.js"></script>
+		<script src="<?php bloginfo('template_directory') ?>/js/html5shiv.js"></script>
 	<![endif]-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<!-- <script src="js/jquery.nivo.slider.pack.js" type="text/javascript"></script> -->
-	<!-- <script type="text/javascript">
-$(window).load(function() {
-    $('#slider').nivoSlider();
-});
-</script> -->
+	<script src="<?php bloginfo( 'template_directory') ?>/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+		    $('#slider').nivoSlider();
+		});
+	</script>
 
 <?php wp_head(); ?>
 

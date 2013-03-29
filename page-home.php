@@ -2,6 +2,22 @@
 
 <?php get_header(); ?>
 
+<div id="sliderarea">
+	<div class="slider-wrapper theme-bar">
+		<div id="slider" class="nivoSlider">
+			<img src="<?php bloginfo( 'template_directory' ); ?>/images/server-rack-slider-size.jpg" alt="">
+			<img src="http://vaulthost.d-tomlinson.co.uk/wp-content/uploads/2013/01/hosting_banner.jpg" alt="">
+			<!-- <div id="sliderbar">
+				<h2 id="imgtitle">High Performance Hardware</h2>
+				<p id="imgdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies massa nec quam ullamcorper fringilla.</p>
+				<a href="#prev" id="sliderprevarrow"></a>
+				<a href="#next" id="slidernextarrow"></a>
+			</div> -->
+		</div>
+	</div>
+</div>
+<div style="clear:both"></div>
+
 <div class="wrapper">
 	<?php if (have_posts()) : while (have_posts()) : the_post();?>
 	<?php the_content(); ?>
